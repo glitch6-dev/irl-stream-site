@@ -753,13 +753,17 @@ a:hover { color: #fff; }
 /* Hero banner */
 .tg6-hero {
   min-height: 460px;
-  background: linear-gradient(160deg, #0a0a0a 0%, #111 60%, #0d0d0d 100%);
+  background: url('../img/hero-bg.svg') center center / cover no-repeat, #020304;
   border-bottom: 1px solid #1e1e1e;
   padding: 5rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+.tg6-hero h1,
+.tg6-hero p {
+  text-shadow: 0 2px 24px rgba(0,0,0,0.85);
 }
 
 /* Product image placeholder */
