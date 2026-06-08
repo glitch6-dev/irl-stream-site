@@ -222,6 +222,8 @@
               <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required />
               <button class="btn btn-dark btn-hov" type="submit">Subscribe</button>
             </div>
+            <!-- honeypot: real users never see/fill this -->
+            <input type="text" id="sub-company" name="company" class="d-none" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <div id="form-status" class="mt-2 text-success fw-semibold"></div>
           </form>
         </div>
@@ -232,6 +234,7 @@
         const form = document.getElementById("subscribe-form");
         const status = document.getElementById("form-status");
         const emailEl = document.getElementById("email");
+        const honeypot = document.getElementById("sub-company");
         const btn = form.querySelector("button[type='submit']");
         function setBusy(busy) {
           btn.disabled = busy;
@@ -248,10 +251,18 @@
           setBusy(true);
           status.innerText = "";
           try {
-            await fetch(
-              "https://script.google.com/macros/s/AKfycbzpUJX2SdtYf5L4rqEbIJVUE1N7XjAs7-er4eQO3FQ4CefbKdjSvojV7SgnTFo5kEQb/exec",
-              { method: "POST", mode: "no-cors", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email }) }
-            );
+            await fetch(window.TG6_FORMS_ENDPOINT, {
+              method: "POST",
+              mode: "no-cors",
+              headers: { "Content-Type": "text/plain;charset=utf-8" },
+              body: JSON.stringify({
+                formType: "subscribe",
+                email: email,
+                page: location.pathname,
+                company: honeypot ? honeypot.value : ""
+              })
+            });
+            // no-cors response is opaque; we can't read it, so we show success optimistically.
             status.classList.replace("text-danger", "text-success");
             status.innerText = "You're in. We'll hit you when it drops.";
             form.reset();

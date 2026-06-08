@@ -96,6 +96,9 @@
                 <label for="message">Message</label>
               </div>
 
+              <!-- honeypot: real users never see/fill this -->
+              <input type="text" id="contact-company" name="company" class="d-none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
               <div class="d-none text-success text-center mb-3 fw-semibold" id="submitSuccessMessage">
                 Message sent — we'll get back to you soon.
               </div>
@@ -164,37 +167,53 @@
     </div>
 
     <script>
-      const scriptURL = "https://script.google.com/macros/s/AKfycbwo0lcwGKuWqR829i_E0VO1VdY_7ZpKsw0Jn1s8KPZdczWrUgSB-RwEwLfCYrOE2ymahQ/exec";
       const form = document.getElementById("contactForm");
       const successMsg = document.getElementById("submitSuccessMessage");
       const errorMsg = document.getElementById("submitErrorMessage");
       const submitBtn = document.getElementById("submitButton");
 
-      form.addEventListener("submit", (e) => {
+      form.addEventListener("submit", async (e) => {
         e.preventDefault();
         successMsg.classList.add("d-none");
         errorMsg.classList.add("d-none");
+
+        // Basic client-side validation
+        const email = form.email.value.trim();
+        const message = form.message.value.trim();
+        if (!email || !/.+@.+\..+/.test(email) || !message) {
+          errorMsg.classList.remove("d-none");
+          return;
+        }
+
         submitBtn.disabled = true;
         submitBtn.innerText = "Sending...";
 
-        const data = new FormData(form);
-        data.append("userAgent", navigator.userAgent || "");
-        data.append("referer", document.referrer || "");
-
-        fetch(scriptURL, { method: "POST", body: data })
-          .then((res) => {
-            if (!res.ok) throw new Error("Network error");
-            form.reset();
-            successMsg.classList.remove("d-none");
-          })
-          .catch((err) => {
-            console.error(err);
-            errorMsg.classList.remove("d-none");
-          })
-          .finally(() => {
-            submitBtn.disabled = false;
-            submitBtn.innerText = "Send Message";
+        try {
+          await fetch(window.TG6_FORMS_ENDPOINT, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify({
+              formType: "contact",
+              name: form.elements["name"].value.trim(),
+              email: email,
+              subject: form.subject.value,
+              message: message,
+              userAgent: navigator.userAgent || "",
+              referer: document.referrer || "",
+              company: form.company ? form.company.value : ""
+            })
           });
+          // no-cors response is opaque; show success optimistically once the request is sent.
+          form.reset();
+          successMsg.classList.remove("d-none");
+        } catch (err) {
+          console.error(err);
+          errorMsg.classList.remove("d-none");
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerText = "Send Message";
+        }
       });
     </script>
 

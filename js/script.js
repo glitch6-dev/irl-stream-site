@@ -1,3 +1,11 @@
+/* === TG6 Forms endpoint =========================================================
+ * Both the subscribe form (index.html) and contact form (contact.html) POST here.
+ * Paste the Apps Script Web App /exec URL after deploying apps-script/Code.gs.
+ * This is the ONE place to update. See apps-script/README.md.
+ */
+window.TG6_FORMS_ENDPOINT = "https://script.google.com/macros/s/AKfycbwykb0OnOAnyIWFHjm8ZpRj0Pc0ZQlBvnes2K-SPMqwVQlO0bq9mzghWsUa_J2nFsqd-g/exec";
+/* ============================================================================== */
+
 /*
 Template Name: Luxuay - eCommerce Website Template
 Author: Pillarix
