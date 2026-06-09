@@ -63,6 +63,25 @@
   </div>
 </div>
 
+<!-- What's Inside -->
+<section class="container r-section" id="whats-inside">
+  <div class="row mb-4"><div class="col-12 text-center">
+    <p class="r-kicker mb-1">What's inside</p>
+    <h2 class="fw-bold mb-0">Every part, doing a job.</h2>
+  </div></div>
+  <div class="hs" data-hotspots="metro">
+    <div class="hs-stage">
+      <img class="hs-image" src="img/in-stock/tg6-metro.png" alt="TG6 Metro streaming backpack with component hotspots" />
+      <div class="hs-layer"></div>
+    </div>
+    <div class="hs-panel">
+      <div class="hs-label"></div>
+      <div class="hs-blurb"></div>
+      <p class="hs-hint">Tap a marker on the pack to see each component.</p>
+    </div>
+  </div>
+</section>
+
     <!-- Shop -->
     <div class="container py-5" id="shop">
       <div class="row mb-4">
@@ -300,12 +319,13 @@
 
     <script src="vender/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="js/icons.js"></script>
+<script src="js/hotspots.js"></script>
 <script>
-  // Hydrate any element with data-icon="<id>" from the shared set.
   document.querySelectorAll('[data-icon]').forEach(function (el) {
     var k = el.getAttribute('data-icon');
     if (window.TG6_ICONS && TG6_ICONS[k]) el.innerHTML = TG6_ICONS[k];
   });
+  if (window.initHotspots) initHotspots('[data-hotspots="metro"]', 'metro');
 </script>
 <script src="js/script.js"></script>
   </body>
