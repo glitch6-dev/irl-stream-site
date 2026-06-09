@@ -185,38 +185,35 @@
       </div>
     </div>
 
-    <!-- Tier Breakdown -->
-    <div class="container py-5 border-top border-bottom text-center" style="border-color: #222 !important;">
-      <div class="row mb-4">
-        <div class="col-12 text-center">
-          <h4 class="fw-bold mb-1">Choose Your Tier</h4>
-          <p style="color:#888;">Every backpack is built around one question: where do you stream?</p>
-        </div>
-      </div>
-      <div class="row g-4 text-center">
-        <div class="col-md-4">
-          <div class="p-4 tg6-tier-card">
-            <i class="ri-building-2-fill fs-2 mb-3 d-block" style="color:#aaa;"></i>
-            <h6 class="fw-bold text-uppercase mb-2">Metro</h6>
-            <p class="small mb-0" style="color:#888;">T-Mobile Home Internet. Plug-and-play 5G. Built for city streets where coverage is dense. Simplest setup, lowest price.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="p-4 tg6-tier-card">
-            <i class="ri-road-map-fill fs-2 mb-3 d-block" style="color:#aaa;"></i>
-            <h6 class="fw-bold text-uppercase mb-2">Roamer</h6>
-            <p class="small mb-0" style="color:#888;">Peplink MAX Transit Duo with dual-SIM bonding. T-Mobile + Verizon. When one carrier drops, the stream continues.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="p-4 tg6-tier-card">
-            <i class="ri-earth-fill fs-2 mb-3 d-block" style="color:#aaa;"></i>
-            <h6 class="fw-bold text-uppercase mb-2">Nomad</h6>
-            <p class="small mb-0" style="color:#888;">Starlink portable. Stream from anywhere on earth. Built for remote locations, off-grid adventures, and international travel.</p>
-          </div>
-        </div>
-      </div>
+<!-- Find Your Backpack -->
+<section class="container r-section border-top border-bottom" id="finder" style="border-color:#222 !important;">
+  <div class="row mb-4"><div class="col-12 text-center">
+    <p class="r-kicker mb-1">Find your backpack</p>
+    <h2 class="fw-bold mb-1">Where do you stream?</h2>
+    <p style="color:#888;">Every backpack is built around one question.</p>
+  </div></div>
+  <div class="row justify-content-center"><div class="col-lg-9">
+    <div class="finder-tiles">
+      <button type="button" class="finder-tile" data-tier="city">
+        <span class="r-icon" data-icon="city"></span>
+        <div class="ft-name">CITY</div>
+      </button>
+      <button type="button" class="finder-tile" data-tier="backcountry">
+        <span class="r-icon" data-icon="backcountry"></span>
+        <div class="ft-name">BACKCOUNTRY</div>
+      </button>
+      <button type="button" class="finder-tile" data-tier="offgrid">
+        <span class="r-icon" data-icon="offgrid"></span>
+        <div class="ft-name">OFF-GRID</div>
+      </button>
     </div>
+    <div class="finder-result">
+      <div class="finder-rec"></div>
+      <div class="finder-blurb"></div>
+      <a class="btn btn-light btn-hov rounded-0 px-4 finder-cta" href="#">View it</a>
+    </div>
+  </div></div>
+</section>
 
 <!-- TG6·dev band -->
 <section class="devband">
@@ -320,12 +317,14 @@
     <script src="vender/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="js/icons.js"></script>
 <script src="js/hotspots.js"></script>
+<script src="js/finder.js"></script>
 <script>
   document.querySelectorAll('[data-icon]').forEach(function (el) {
     var k = el.getAttribute('data-icon');
     if (window.TG6_ICONS && TG6_ICONS[k]) el.innerHTML = TG6_ICONS[k];
   });
   if (window.initHotspots) initHotspots('[data-hotspots="metro"]', 'metro');
+  if (window.initFinder) initFinder();
 </script>
 <script src="js/script.js"></script>
   </body>
