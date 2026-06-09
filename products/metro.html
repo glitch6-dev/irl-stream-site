@@ -30,18 +30,20 @@
             <li class="nav-item"><a class="nav-link text-uppercase" href="../index.html">Shop</a></li>
             <li class="nav-item"><a class="nav-link text-uppercase" href="../about.html">About</a></li>
             <li class="nav-item"><a class="nav-link text-uppercase" href="../contact.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link text-uppercase d-inline-flex align-items-center gap-1"
+              href="https://glitch6-dev.github.io/DigitalServices/" target="_blank" rel="noopener">
+              TG6&middot;dev <span class="r-icon" data-icon="external" style="width:13px;height:13px;"></span></a></li>
           </ul>
         </div>
-        <div class="col-md-4 text-end" style="margin-right: 10px">
-          <a target="_blank" href="https://www.twitch.tv/teamglitch6" class="btn social-btn btn-sm text-decoration-none"><i class="ri-twitch-fill fs-5"></i></a>
-          <a target="_blank" href="https://www.youtube.com/channel/UC7KaaAFaf3LXI2Xcl7P9Ilw" class="btn social-btn btn-sm text-decoration-none"><i class="ri-youtube-fill fs-5"></i></a>
-          <a target="_blank" href="https://www.kick.com/teamglitch6" class="btn social-btn btn-sm text-decoration-none"><i class="ri-broadcast-fill fs-5"></i></a>
-          <a target="_blank" href="#" class="btn social-btn btn-sm text-decoration-none"><i class="ri-instagram-fill fs-5"></i></a>
+        <div class="text-end" style="margin-right:10px">
+          <a target="_blank" rel="noopener" href="https://www.twitch.tv/teamglitch6" class="r-iconbtn" data-icon="twitch"></a>
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UC7KaaAFaf3LXI2Xcl7P9Ilw" class="r-iconbtn" data-icon="youtube"></a>
+          <a target="_blank" rel="noopener" href="https://www.kick.com/teamglitch" class="r-iconbtn" data-icon="kick"></a>
         </div>
         <button class="navbar-toggler border-0 shadow-none" type="button"
           data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="ri-menu-3-line text-dark"></i>
+          <i class="ri-menu-3-line text-white"></i>
         </button>
       </div>
     </nav>
@@ -52,12 +54,14 @@
 
         <!-- Image -->
         <div class="col-lg-6 col-12">
-          <div class="swiper product-view-slider">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="../img/in-stock/tg6-metro.png" alt="Tg6 Metro" class="img-fluid w-100" />
-              </div>
-            </div>
+          <div class="hs-stage" data-hotspots="metro">
+            <img class="hs-image" src="../img/in-stock/tg6-metro.png" alt="TG6 metro streaming backpack with component hotspots" />
+            <div class="hs-layer"></div>
+          </div>
+          <div class="hs-panel mt-3">
+            <div class="hs-label"></div>
+            <div class="hs-blurb"></div>
+            <p class="hs-hint">Tap a marker to see each component.</p>
           </div>
         </div>
 
@@ -150,22 +154,32 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-8">
-            <span class="me-3 small">©2026 <b>TG6</b>. All rights reserved.</span>
-            <a class="text-secondary small mx-3 text-decoration-none" href="../about.html">About</a>
-            <a class="text-secondary small mx-3 text-decoration-none" href="../faq.html">FAQ</a>
-            <a class="text-secondary small mx-3 text-decoration-none" href="../terms.html">Terms</a>
+            <span class="me-3 small">&copy;2026 <b>TG6</b>. All rights reserved.</span>
+            <a class="text-secondary small mx-2 text-decoration-none" href="../about.html">About</a>
+            <a class="text-secondary small mx-2 text-decoration-none" href="../faq.html">FAQ</a>
+            <a class="text-secondary small mx-2 text-decoration-none" href="../terms.html">Terms</a>
+            <a class="text-secondary small mx-2 text-decoration-none" href="../privacy.html">Privacy</a>
+            <a class="text-secondary small mx-2 text-decoration-none" href="https://glitch6-dev.github.io/DigitalServices/" target="_blank" rel="noopener">TG6&middot;dev</a>
           </div>
           <div class="col-md-4 text-end hide-on-mobile">
-            <a target="_blank" href="https://www.twitch.tv/teamglitch6" class="btn social-btn btn-sm text-decoration-none"><i class="ri-twitch-fill fs-5"></i></a>
-            <a target="_blank" href="https://www.youtube.com/channel/UC7KaaAFaf3LXI2Xcl7P9Ilw" class="btn social-btn btn-sm text-decoration-none"><i class="ri-youtube-fill fs-5"></i></a>
-            <a target="_blank" href="https://www.kick.com/teamglitch6" class="btn social-btn btn-sm text-decoration-none"><i class="ri-broadcast-fill fs-5"></i></a>
+            <a target="_blank" rel="noopener" href="https://www.twitch.tv/teamglitch6" class="r-iconbtn" data-icon="twitch"></a>
+            <a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UC7KaaAFaf3LXI2Xcl7P9Ilw" class="r-iconbtn" data-icon="youtube"></a>
+            <a target="_blank" rel="noopener" href="https://www.kick.com/teamglitch" class="r-iconbtn" data-icon="kick"></a>
           </div>
         </div>
       </div>
     </div>
 
     <script src="../vender/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../vender/swiper-js/swiper-bundle.min.js"></script>
+    <script src="../js/icons.js"></script>
+    <script src="../js/hotspots.js"></script>
+    <script>
+      document.querySelectorAll('[data-icon]').forEach(function (el) {
+        var k = el.getAttribute('data-icon');
+        if (window.TG6_ICONS && TG6_ICONS[k]) el.innerHTML = TG6_ICONS[k];
+      });
+      if (window.initHotspots) initHotspots('[data-hotspots="metro"]', 'metro');
+    </script>
     <script src="../js/script.js"></script>
   </body>
 </html>
