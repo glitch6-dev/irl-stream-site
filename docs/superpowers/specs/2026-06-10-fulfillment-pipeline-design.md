@@ -25,7 +25,13 @@ Customer pre-order (Stripe)
 
 ### Stage 1 — Order intake
 Customer pays through the Stripe pre-order payment link on the product page. Order appears in the Stripe dashboard.
-**Launch blocker:** product pages currently use sandbox `test_` payment links (`products/*.html`, marked with `SANDBOX` comments); they must be swapped to live links before launch.
+
+The customer configures their pack at checkout via Stripe payment-link **custom fields** (three dropdowns — none change the price, see §3.2):
+1. **Microphone:** boom mic *or* DJI Mic Mini set (2 or 3 transmitters)
+2. **Light tier:** 1, 2, or 3
+3. **Handheld stabilizer:** yes / no
+
+**Launch blocker:** product pages currently use sandbox `test_` payment links (`products/*.html`, marked with `SANDBOX` comments); they must be swapped to live links **with the three custom fields configured** before launch.
 
 ### Stage 2 — Procurement
 A purchase checklist is generated from the ordered pack's BOM (§3): every line item, source link, order number, ETA. All items are bought online immediately after payment. **Manual for now** — this stage is the hook for future automation (§5).
@@ -44,7 +50,8 @@ Per-pack checklist, run live end-to-end before anything ships:
 - Stream to Twitch, YouTube, and Kick at 1080p60.
 - 4K 30fps local recording to SD card.
 - Battery hot-swap without dropping the stream.
-- Light and microphone check on the live feed.
+- Light and microphone check on the live feed (whichever options the customer selected).
+- If a stabilizer was selected: camera moves mount → stabilizer → mount tool-free, stream stays up.
 - Tier signature test — Metro: 5G gateway throughput; Roamer: pull one SIM mid-stream, confirm bonded failover holds; Nomad: Starlink uplink with cellular failover.
 
 ### Stage 6 — Ship & handoff
@@ -61,8 +68,8 @@ Per-pack checklist, run live end-to-end before anything ships:
 | Sony ZV-1 II | 4K 30fps camera, clean HDMI out | Per-order |
 | Elgato Cam Link 4K | HDMI → USB capture | Per-order |
 | Dell Latitude 7420 | Encoder laptop (OBS / nginx-RTMP) | Per-order |
-| Clip-on LED video light | Low-light / night streaming | Per-order |
-| Clip-on microphone (lavalier or compact shotgun) | Voice audio; exact model chosen at purchase time by availability | Per-order |
+| LED video light (customer-selected tier, §3.2) | Low-light / night streaming | Per-order |
+| Microphone (customer-selected style, §3.2) | Voice audio | Per-order |
 | High-endurance SD cards | 4K local recording (VODs/clips) | Per-order |
 | USB hub, HDMI cable, chargers, cable management | Connective tissue | Per-order |
 | Hot-swap battery packs | Mobile power | Per-order |
@@ -71,7 +78,17 @@ Per-pack checklist, run live end-to-end before anything ships:
 
 > The mount supersedes the "Shoulder strap camera mount (Ulanzi / SmallRig)" line currently on the Metro product page — site copy must change to the TG6 printed mount (§5).
 
-### 3.2 Per-tier connectivity
+### 3.2 Customer-configured options (all included — flat pack price)
+
+Chosen at checkout via the Stage 1 custom fields. None of these change the price; they change what Stage 2 purchases.
+
+| Option | Choices | Notes |
+|---|---|---|
+| Microphone | **Boom mic** *or* **DJI Mic Mini set (2 or 3 transmitters)** | Boom = single-voice run-and-gun; Mic Minis = multi-person IRL audio |
+| Light | **Tier 1** basic clip-on LED · **Tier 2** mid RGB panel · **Tier 3** pro bi-color/RGB panel | Exact models per tier chosen at purchase time by availability |
+| Handheld stabilizer | **Yes / no** | Lets the customer pull the camera off the 3D-printed shoulder mount and shoot handheld; camera must move between mount and stabilizer tool-free |
+
+### 3.3 Per-tier connectivity
 
 | Pack | Hardware | Service (TG6-activated, transferred at handoff) |
 |---|---|---|
@@ -81,13 +98,13 @@ Per-pack checklist, run live end-to-end before anything ships:
 
 ## 4. Error handling
 
-- **Component unavailable/back-ordered:** substitute an equivalent (same role, ≥ same spec) or notify the customer of the delay; the BOM lists roles, not immutable SKUs, for exactly this reason (camera, Cam Link, Peplink, and Starlink are exceptions — fixed models).
+- **Component unavailable/back-ordered:** substitute an equivalent (same role, ≥ same spec) or notify the customer of the delay; the BOM lists roles, not immutable SKUs, for exactly this reason (camera, Cam Link, Peplink, Starlink, and the DJI Mic Mini — when selected — are exceptions: fixed models).
 - **Test failure at Stage 5:** the pack does not ship; failing component is replaced via Stage 2 and the pack re-runs the full checklist.
 - **Service transfer fails at handoff:** support the customer through carrier/Starlink account setup before closing the order.
 
 ## 5. Out of scope (recorded follow-ups)
 
-1. **Site content update** — add the light, microphone, SD cards, and TG6 3D-printed mount to the "What's Inside" tables and hotspot data (`js/hotspots.js`) on all three product pages and the homepage; fix the Metro mount line. Needs its own small plan.
+1. **Site content update** — add the light, microphone, SD cards, and TG6 3D-printed mount to the "What's Inside" tables and hotspot data (`js/hotspots.js`) on all three product pages and the homepage; fix the Metro mount line; present the customer options (§3.2: mic style, light tier, optional stabilizer) so buyers know they choose at checkout. Needs its own small plan.
 2. **Procurement automation** — Stripe webhook → auto-generated purchase checklist (Stage 2). Future project.
 3. **Stripe live links** — swap `test_` payment links before launch.
 4. **Setup guide** — the customer-facing document referenced in Stage 6 does not exist yet.
