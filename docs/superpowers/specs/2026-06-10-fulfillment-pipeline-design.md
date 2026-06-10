@@ -27,7 +27,7 @@ Customer pre-order (Stripe)
 Customer pays through the Stripe pre-order payment link on the product page. Order appears in the Stripe dashboard.
 
 The customer configures their pack at checkout via Stripe payment-link **custom fields** (three dropdowns — none change the price, see §3.2):
-1. **Microphone:** boom mic *or* DJI Mic Mini set (2 or 3 transmitters)
+1. **Microphone:** boom mic *or* DJI Mic Mini set (2 transmitters)
 2. **Light tier:** 1, 2, or 3
 3. **Handheld stabilizer:** yes / no
 
@@ -84,7 +84,7 @@ Chosen at checkout via the Stage 1 custom fields. None of these change the price
 
 | Option | Choices | Notes |
 |---|---|---|
-| Microphone | **Boom mic** *or* **DJI Mic Mini set (2 or 3 transmitters)** | Boom = single-voice run-and-gun; Mic Minis = multi-person IRL audio |
+| Microphone | **Boom mic** *or* **DJI Mic Mini set (2 transmitters max — flat-rate cap)** | Boom = single-voice run-and-gun; Mic Minis = multi-person IRL audio |
 | Light | **Tier 1** basic clip-on LED · **Tier 2** mid RGB panel · **Tier 3** pro bi-color/RGB panel | Exact models per tier chosen at purchase time by availability |
 | Handheld stabilizer | **Yes / no** | Lets the customer pull the camera off the 3D-printed shoulder mount and shoot handheld; camera must move between mount and stabilizer tool-free |
 
