@@ -975,6 +975,10 @@ a:hover { color: #fff; }
 .finder-result.is-visible{opacity:1;}
 .finder-result .finder-rec{font-weight:800;font-size:1.4rem;color:#fff;}
 .finder-result .finder-blurb{color:var(--r-mut);font-size:.9rem;margin:.3rem 0 1rem;}
+/* merged shop/finder: picking a tier spotlights the matching card */
+#shop .product{transition:opacity .3s var(--r-ease);}
+#shop.has-pick .product{opacity:.45;}
+#shop.has-pick .product.is-rec{opacity:1;outline:1px solid #fff;outline-offset:8px;}
 /* === TG6·dev band === */
 /* Palette mirrors the TG6·dev site (Repos/DigitalServices styles.css tokens):
    dark-green bg + lime signal color — scoped to this band only. */
@@ -982,7 +986,7 @@ a:hover { color: #fff; }
   border-top:1px solid rgba(163,230,53,.15);border-bottom:1px solid rgba(163,230,53,.15);}
 .devband .dev-eyebrow{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:#a3e635;}
 .devband h3{font-weight:800;margin:.5rem 0;color:#eaf1ea;}
-.devband p{color:#90a89a;max-width:48ch;}
+.devband p{color:#90a89a;max-width:48ch;margin-inline:auto;}
 .devband .dev-cta{display:inline-flex;align-items:center;gap:.5rem;border:1px solid #a3e635;color:#a3e635;
   padding:.7rem 1.4rem;text-transform:uppercase;font-size:.8rem;letter-spacing:.08em;transition:background .25s,color .25s,border-color .25s;}
 .devband .dev-cta:hover{background:#a3e635;border-color:#a3e635;color:#080b09;}

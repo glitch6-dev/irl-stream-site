@@ -82,19 +82,42 @@
   </div>
 </section>
 
-    <!-- Shop -->
-    <div class="container py-5" id="shop">
+    <!-- Shop / Find Your Backpack -->
+    <section class="container r-section" id="shop">
       <div class="row mb-4">
         <div class="col-12 text-center">
-          <p class="r-kicker mb-1">The lineup</p>
-          <h2 class="fw-bold mb-0">Three backpacks. Three tiers.</h2>
+          <p class="r-kicker mb-1">Find your backpack</p>
+          <h2 class="fw-bold mb-1">Where do you stream?</h2>
+          <p style="color:#888;">Three backpacks. Three tiers — every one built around one question.</p>
+        </div>
+      </div>
+      <div class="row justify-content-center mb-2">
+        <div class="col-lg-9">
+          <div class="finder-tiles">
+            <button type="button" class="finder-tile" data-tier="city">
+              <span class="r-icon" data-icon="city"></span>
+              <div class="ft-name">CITY</div>
+            </button>
+            <button type="button" class="finder-tile" data-tier="backcountry">
+              <span class="r-icon" data-icon="backcountry"></span>
+              <div class="ft-name">BACKCOUNTRY</div>
+            </button>
+            <button type="button" class="finder-tile" data-tier="offgrid">
+              <span class="r-icon" data-icon="offgrid"></span>
+              <div class="ft-name">OFF-GRID</div>
+            </button>
+          </div>
+          <div class="finder-result">
+            <div class="finder-rec"></div>
+            <div class="finder-blurb"></div>
+          </div>
         </div>
       </div>
       <div class="row g-4 justify-content-center">
 
         <!-- Metro -->
         <div class="col-6 col-md-4 col-lg-3 col-xl-custom-5">
-          <div class="card bg-transparent border-0 rounded-0 h-100 product">
+          <div class="card bg-transparent border-0 rounded-0 h-100 product" data-product="metro">
             <div class="position-relative">
               <div class="product-image-swap">
                 <img src="img/in-stock/tg6-metro.png" alt="TG6 Metro Streaming Backpack" class="img-fluid w-100 primary" />
@@ -124,7 +147,7 @@
 
         <!-- Roamer -->
         <div class="col-6 col-md-4 col-lg-3 col-xl-custom-5">
-          <div class="card bg-transparent border-0 rounded-0 h-100 product">
+          <div class="card bg-transparent border-0 rounded-0 h-100 product" data-product="roamer">
             <div class="position-relative">
               <div class="product-image-swap">
                 <img src="img/pre-orders/tg6-roamer.png" alt="TG6 Roamer Streaming Backpack" class="img-fluid w-100 primary" />
@@ -154,7 +177,7 @@
 
         <!-- Nomad -->
         <div class="col-6 col-md-4 col-lg-3 col-xl-custom-5">
-          <div class="card bg-transparent border-0 rounded-0 h-100 product">
+          <div class="card bg-transparent border-0 rounded-0 h-100 product" data-product="nomad">
             <div class="position-relative">
               <div class="product-image-swap">
                 <img src="img/pre-orders/tg6-nomad.png" alt="TG6 Nomad Streaming Backpack" class="img-fluid w-100 primary" />
@@ -183,37 +206,7 @@
         </div>
 
       </div>
-    </div>
-
-<!-- Find Your Backpack -->
-<section class="container r-section border-top border-bottom" id="finder" style="border-color:#222 !important;">
-  <div class="row mb-4"><div class="col-12 text-center">
-    <p class="r-kicker mb-1">Find your backpack</p>
-    <h2 class="fw-bold mb-1">Where do you stream?</h2>
-    <p style="color:#888;">Every backpack is built around one question.</p>
-  </div></div>
-  <div class="row justify-content-center"><div class="col-lg-9">
-    <div class="finder-tiles">
-      <button type="button" class="finder-tile" data-tier="city">
-        <span class="r-icon" data-icon="city"></span>
-        <div class="ft-name">CITY</div>
-      </button>
-      <button type="button" class="finder-tile" data-tier="backcountry">
-        <span class="r-icon" data-icon="backcountry"></span>
-        <div class="ft-name">BACKCOUNTRY</div>
-      </button>
-      <button type="button" class="finder-tile" data-tier="offgrid">
-        <span class="r-icon" data-icon="offgrid"></span>
-        <div class="ft-name">OFF-GRID</div>
-      </button>
-    </div>
-    <div class="finder-result">
-      <div class="finder-rec"></div>
-      <div class="finder-blurb"></div>
-      <a class="btn btn-light btn-hov rounded-0 px-4 finder-cta" href="#">View it</a>
-    </div>
-  </div></div>
-</section>
+    </section>
 
 <!-- TG6·dev band -->
 <section class="devband">
