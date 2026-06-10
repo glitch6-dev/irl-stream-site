@@ -27,5 +27,15 @@
         });
       });
     });
+
+    // Clicking outside the highlight (tiles, result, or the spotlit card) resets the pick.
+    document.addEventListener('click', function (e) {
+      if (!shop.classList.contains('has-pick')) return;
+      if (e.target.closest('.finder-tile') || e.target.closest('.finder-result') || e.target.closest('.product.is-rec')) return;
+      shop.classList.remove('has-pick');
+      result.classList.remove('is-visible');
+      tiles.forEach(function (t) { t.classList.remove('is-active'); });
+      shop.querySelectorAll('[data-product]').forEach(function (card) { card.classList.remove('is-rec'); });
+    });
   };
 })();
