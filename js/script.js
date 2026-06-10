@@ -28,6 +28,10 @@ Version: 0.1
     - Plus Minus
 */
 
+/* Sliders only exist on inStock/pre-orders pages, which load swiper-bundle.min.js.
+   The main site pages don't ship Swiper — skip cleanly instead of throwing. */
+if (typeof Swiper !== "undefined") {
+
 // homepage slider
 var swiper = new Swiper(".hero-header", {
   navigation: {
@@ -303,6 +307,8 @@ var swiper = new Swiper(".you-like-slider", {
     },
   },
 });
+
+} // end Swiper guard
 
 // tooptip js
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
