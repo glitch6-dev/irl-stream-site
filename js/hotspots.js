@@ -30,10 +30,12 @@
     ].concat(extras)
   };
 
-  function show(root, productKey, i) {
+  function show(root, panel, productKey, i) {
     var h = TG6_HOTSPOTS[productKey][i];
-    root.querySelector('.hs-label').textContent = h.label;
-    root.querySelector('.hs-blurb').textContent = h.blurb;
+    var label = panel.querySelector('.hs-label');
+    var blurb = panel.querySelector('.hs-blurb');
+    if (label) label.textContent = h.label;
+    if (blurb) blurb.textContent = h.blurb;
     root.querySelectorAll('.hs-dot').forEach(function (d) {
       d.classList.toggle('is-active', +d.dataset.index === i);
     });
@@ -42,6 +44,9 @@
   window.initHotspots = function (rootSelector, productKey) {
     var root = document.querySelector(rootSelector);
     if (!root || !TG6_HOTSPOTS[productKey]) return;
+    // Product pages put data-hotspots on .hs-stage with .hs-panel as a sibling,
+    // so the label/blurb may live outside root.
+    var panel = root.querySelector('.hs-label') ? root : (root.parentElement || root);
     var layer = root.querySelector('.hs-layer');
     TG6_HOTSPOTS[productKey].forEach(function (h, i) {
       var dot = document.createElement('button');
@@ -52,9 +57,9 @@
       dot.dataset.index = i;
       dot.setAttribute('aria-label', h.label);
       dot.innerHTML = (window.TG6_ICONS && TG6_ICONS[h.icon]) || '';
-      dot.addEventListener('click', function () { show(root, productKey, i); });
+      dot.addEventListener('click', function () { show(root, panel, productKey, i); });
       layer.appendChild(dot);
     });
-    show(root, productKey, 0); // default to first component
+    show(root, panel, productKey, 0); // default to first component
   };
 })();
