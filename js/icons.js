@@ -17,6 +17,9 @@
     external: svg('<path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/>'),
     twitch: svg('<path d="M4 3h16v11l-4 4h-4l-3 3H7v-3H4z"/><path d="M11 8v4M15 8v4"/>'),
     youtube: svg('<rect x="3" y="6" width="18" height="12" rx="3"/><path d="M11 9.5l4 2.5-4 2.5z" fill="currentColor"/>'),
-    kick: svg('<path d="M5 4h4v5l4-5h5l-6 8 6 8h-5l-4-5v5H5z" fill="currentColor" stroke="none"/>')
+    kick: svg('<path d="M5 4h4v5l4-5h5l-6 8 6 8h-5l-4-5v5H5z" fill="currentColor" stroke="none"/>'),
+    light: svg('<rect x="6" y="4" width="12" height="9" rx="1.5"/><path d="M9 7h1M12 7h1M15 7h1M9 10h1M12 10h1M15 10h1"/><path d="M12 13v5"/><path d="M9 21h6"/>'),
+    mic: svg('<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/>'),
+    mount: svg('<path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12L4 7.5M12 12v9"/>')
   };
 })();
