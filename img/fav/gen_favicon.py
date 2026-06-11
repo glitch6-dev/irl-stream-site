@@ -1,47 +1,45 @@
 #!/usr/bin/env python3
-"""Generate the TG6 wordmark favicon set.
+"""Generate the TG6 logo favicon set.
 
-Design: bold white "TG6" (Lato Black) centred on a black rounded-square tile.
-Rendered supersampled then downscaled (LANCZOS) so small icons stay crisp.
+Design: the "TG6" letters of img/brand/tg6-wordmark.png (cropped above the
+"TEAM GLITCH // SIX" tagline, which is unreadable at icon sizes) centred on a
+dark rounded-square tile (site background #07060c). Rendered supersampled then
+downscaled (LANCZOS) so small icons stay crisp.
 """
 import os
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-FONT_PATH = "/usr/share/fonts/truetype/lato/Lato-Black.ttf"
-TEXT = "TG6"
-BG = (0, 0, 0, 255)        # brand black
-FG = (255, 255, 255, 255)  # brand white
+SOURCE = os.path.join(HERE, "..", "brand", "tg6-wordmark.png")
+MARK_FRAC = 0.74           # top fraction of the logo: TG6 letters, no tagline
+BG = (7, 6, 12, 255)       # site background / theme-color
 CORNER = 0.18              # corner radius as fraction of size
-TEXT_W = 0.80             # target text width as fraction of tile
+MARK_W = 0.88              # mark width as fraction of tile
 
-def _fit_font(draw, target_w):
-    lo, hi = 4, 4000
-    while lo < hi:
-        mid = (lo + hi + 1) // 2
-        f = ImageFont.truetype(FONT_PATH, mid)
-        b = draw.textbbox((0, 0), TEXT, font=f)
-        if (b[2] - b[0]) <= target_w:
-            lo = mid
-        else:
-            hi = mid - 1
-    return ImageFont.truetype(FONT_PATH, lo)
+def _mark():
+    img = Image.open(SOURCE).convert("RGBA")
+    crop = img.crop((0, 0, img.width, int(img.height * MARK_FRAC)))
+    return crop.crop(crop.getbbox())
 
-def render(size):
+MARK = _mark()
+
+def render(size, mark_w=MARK_W):
     img = Image.new("RGBA", (size, size), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
     d.rounded_rectangle([0, 0, size - 1, size - 1], radius=int(size * CORNER), fill=BG)
-    font = _fit_font(d, size * TEXT_W)
-    b = d.textbbox((0, 0), TEXT, font=font)
-    w, h = b[2] - b[0], b[3] - b[1]
-    x = (size - w) / 2 - b[0]
-    y = (size - h) / 2 - b[1]
-    d.text((x, y), TEXT, font=font, fill=FG)
+    target = int(size * mark_w)
+    scale = target / MARK.width
+    mark = MARK.resize((max(1, int(MARK.width * scale)), max(1, int(MARK.height * scale))), Image.LANCZOS)
+    x = (size - mark.width) // 2
+    y = (size - mark.height) // 2
+    img.alpha_composite(mark, (x, y))
     return img
 
 def make(size):
     ss = max(size * 8, 512)
-    return render(ss).resize((size, size), Image.LANCZOS)
+    # let the mark fill almost the whole tile at small sizes for legibility
+    mark_w = 0.96 if size <= 48 else MARK_W
+    return render(ss, mark_w).resize((size, size), Image.LANCZOS)
 
 # All filenames referenced by the site / manifest / browserconfig
 PNG_SIZES = {
