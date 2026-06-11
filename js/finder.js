@@ -3,8 +3,8 @@
   "use strict";
   var TIERS = {
     city:        { product: "metro",  line: "> MATCH: TG6_METRO · T-MOBILE 5G · $2,100 · PRE-ORDER" },
-    backcountry: { product: "roamer", line: "> MATCH: TG6_ROAMER · DUAL-SIM BONDED · $5,000 · PRE-ORDER" },
-    offgrid:     { product: "nomad",  line: "> MATCH: TG6_NOMAD · STARLINK ROAM · $3,000 · PRE-ORDER" }
+    backcountry: { product: "roamer", line: "> MATCH: TG6_ROAMER · DUAL-SIM BONDED · $3,000 · PRE-ORDER" },
+    offgrid:     { product: "nomad",  line: "> MATCH: TG6_NOMAD · STARLINK ROAM · $5,000 · PRE-ORDER" }
   };
   var tiles = document.querySelectorAll(".finder-tile");
   var out = document.querySelector(".finder-line");

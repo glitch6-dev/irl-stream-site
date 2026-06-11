@@ -141,12 +141,6 @@ main, header, footer { position: relative; z-index: 2; }
 .hero-art img { position: relative; filter: drop-shadow(0 18px 48px #a855f733); }
 @media (max-width: 860px) { .hero-inner { grid-template-columns: 1fr; } .hero-art { order: -1; max-width: 320px; margin: 0 auto; } }
 
-/* ============ MARQUEE ============ */
-.marquee { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 10px 0; margin-bottom: 56px; }
-.marquee-track { display: flex; white-space: nowrap; animation: marquee 28s linear infinite; color: var(--purple); font-size: 13px; letter-spacing: 2px; }
-.marquee:hover .marquee-track { animation-play-state: paused; }
-@keyframes marquee { to { transform: translateX(-50%); } }
-
 /* ============ FINDER (Signal Check) ============ */
 .finder-tiles { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
 .finder-tile {
@@ -162,7 +156,6 @@ main, header, footer { position: relative; z-index: 2; }
 
 /* ============ LINEUP CARDS ============ */
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; position: relative; }
-.wolf-mark { position: absolute; right: -30px; top: -90px; height: 200px; opacity: .12; pointer-events: none; z-index: 0; }
 .pcard {
   position: relative; z-index: 1; display: flex; flex-direction: column; gap: 8px;
   background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 20px;
@@ -176,7 +169,7 @@ main, header, footer { position: relative; z-index: 2; }
 .pcard-name { font-family: var(--font-display); font-size: 20px; color: var(--text); }
 .pcard-row { display: flex; justify-content: space-between; align-items: baseline; }
 .pcard-price { font-family: var(--font-mono); font-size: 16px; color: var(--text); }
-@media (max-width: 860px) { .cards { grid-template-columns: 1fr; } .wolf-mark { right: 0; } }
+@media (max-width: 860px) { .cards { grid-template-columns: 1fr; } }
 
 /* ============ DEVBAND ============ */
 .devband { padding: 64px 0; }
