@@ -89,3 +89,36 @@ main, header, footer { position: relative; z-index: 2; }
   .glitch, .scanline::after, .marquee-track { animation: none !important; }
   * { transition-duration: .01ms !important; }
 }
+
+/* ============ NAV ============ */
+.nav { position: sticky; top: 0; z-index: 50; background: #07060cb3; backdrop-filter: blur(0px); transition: backdrop-filter .2s, background .2s; border-bottom: 1px solid transparent; }
+.nav.scrolled { backdrop-filter: blur(14px); background: #07060ce6; border-bottom-color: var(--line); }
+.nav-inner { display: flex; align-items: center; gap: 28px; padding-top: 14px; padding-bottom: 14px; }
+.brand img { height: 34px; width: auto; }
+.nav-links { display: flex; gap: 24px; margin-left: auto; }
+.nav-links a { color: var(--body); font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+.nav-links a:hover { color: var(--text); }
+.nav-status { white-space: nowrap; }
+.nav-toggle { display: none; background: none; border: 0; cursor: pointer; flex-direction: column; gap: 5px; padding: 6px; }
+.nav-toggle span { width: 22px; height: 2px; background: var(--text); display: block; }
+.mobile-menu { display: none; }
+@media (max-width: 768px) {
+  .nav-links, .nav-status { display: none; }
+  .nav-toggle { display: flex; margin-left: auto; }
+  .mobile-menu { display: none; position: fixed; inset: 0; top: 63px; z-index: 49; background: #07060cfa; padding: 36px 24px; flex-direction: column; gap: 22px; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { color: var(--text); font-size: 20px; font-family: var(--font-display); }
+  .mobile-menu .socials { display: flex; gap: 18px; margin-top: 12px; }
+  .mobile-menu .socials a, .footer .socials a { color: var(--body); }
+}
+
+/* ============ FOOTER ============ */
+.footer { border-top: 1px solid var(--line); padding: 56px 0 40px; margin-top: 96px; }
+.footer-inner { display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; }
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+.footer-links a { color: var(--muted); font-size: 13px; }
+.footer-links a:hover { color: var(--text); }
+.footer .socials { display: flex; gap: 18px; }
+.footer .socials a { color: var(--muted); } .footer .socials a:hover { color: var(--text); }
+.footer-tag { font-size: 12px; color: var(--purple); letter-spacing: 2px; }
+.footer-copy { font-size: 12px; color: var(--muted); }
