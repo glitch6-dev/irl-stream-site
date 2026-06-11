@@ -272,3 +272,14 @@ a.tier-item:hover { border-color: var(--purple); transform: translateY(-2px); }
 .contact-form ::placeholder { color: var(--muted); }
 .contact-form .btn { align-self: flex-start; }
 .contact-links { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 32px; font-size: 13px; }
+
+/* ============ FAQ / LEGAL (details accordions) ============ */
+.qa-sub { margin-top: 18px; }
+.qa-group { margin: 40px 0 12px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; }
+details.qa { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; margin-bottom: 10px; }
+details.qa summary { cursor: pointer; padding: 16px 18px; color: var(--text); font-weight: 700; font-size: 15px; list-style: none; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+details.qa summary::-webkit-details-marker { display: none; }
+details.qa summary::after { content: "+"; font-family: var(--font-mono); color: var(--cyan); flex: none; }
+details.qa[open] summary::after { content: "–"; }
+details.qa .qa-body { padding: 0 18px 16px; font-size: 14px; }
+details.qa .qa-body strong { color: var(--text); }

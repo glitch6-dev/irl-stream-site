@@ -1,262 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TG6 | FAQ</title>
-    <meta name="description" content="Frequently asked questions about TG6 backpacks, orders, shipping, and streaming." />
-    <link rel="stylesheet" href="vender/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="vender/remixicon/remixicon.css" />
-    <link rel="stylesheet" href="vender/swiper-js/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TG6 | FAQ</title>
+  <meta name="description" content="TG6 FAQ — everything you need to know about TG6 backpacks, orders, and streaming." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png" />
+  <link rel="shortcut icon" href="img/fav/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-icon-180x180.png" />
+  <meta name="theme-color" content="#07060c" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="glow" aria-hidden="true"></div>
 
-      <!-- Favicon (TG6) -->
-    <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png" />
-    <link rel="shortcut icon" href="img/fav/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-icon-180x180.png" />
-    <link rel="manifest" href="img/fav/manifest.json" />
-    <meta name="theme-color" content="#000000" />
-  </head>
-  <body>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg osahan-nav p-0 border-bottom navbar-dark">
-      <div class="container-fluid px-3">
-        <a class="navbar-brand py-3 pe-3 border-end" href="index.html">
-          <span class="fw-bold text-white fs-5 px-1">TG6</span>
-        </a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 osahan-nav-navbar-nav">
-            <li class="nav-item"><a class="nav-link text-uppercase" href="index.html">Shop</a></li>
-            <li class="nav-item"><a class="nav-link text-uppercase" href="about.html">About</a></li>
-            <li class="nav-item"><a class="nav-link text-uppercase" href="contact.html">Contact</a></li>
-            <li class="nav-item"><a class="nav-link text-uppercase d-inline-flex align-items-center gap-1"
-              href="https://glitch6-dev.github.io/DigitalServices/" target="_blank" rel="noopener">
-              TG6&middot;dev <span class="r-icon" data-icon="external" style="width:13px;height:13px;"></span></a></li>
-          </ul>
-        </div>
-        <div class="text-end" style="margin-right:10px">
-          <a target="_blank" rel="noopener" href="https://www.twitch.tv/teamglitch6" class="r-iconbtn" data-icon="twitch"></a>
-          <a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UC7KaaAFaf3LXI2Xcl7P9Ilw" class="r-iconbtn" data-icon="youtube"></a>
-          <a target="_blank" rel="noopener" href="https://www.kick.com/teamglitch" class="r-iconbtn" data-icon="kick"></a>
-        </div>
-        <button class="navbar-toggler border-0 shadow-none" type="button"
-          data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="ri-menu-3-line text-white"></i>
-        </button>
-      </div>
+<header class="nav" id="top">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html" aria-label="TG6 home">
+      <img src="img/brand/tg6-wordmark.png" alt="TG6" height="34" width="67" />
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://glitch6-dev.github.io/DigitalServices/" target="_blank" rel="noopener">TG6·dev ↗</a>
     </nav>
+    <span class="status-dot nav-status" aria-hidden="true">● ONLINE</span>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="index.html">Shop</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="https://glitch6-dev.github.io/DigitalServices/" target="_blank" rel="noopener">TG6·dev ↗</a>
+  <div class="socials">
+    <a href="https://www.twitch.tv/teamglitch6" target="_blank" rel="noopener" aria-label="Twitch"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M4 2 2 6v14h5v2h3l2-2h4l5-5V2H4Zm15 12-3 3h-5l-2 2v-2H5V4h14v10ZM13 7h2v5h-2V7Zm-5 0h2v5H8V7Z"/></svg></a>
+    <a href="https://www.youtube.com/channel/UC7KaaAFaf3LXI2Xcl7P9Ilw" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.7-1.7C19.4 5.2 12 5.2 12 5.2s-7.4 0-8.9.4A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.7 1.7c1.5.4 8.9.4 8.9.4s7.4 0 8.9-.4a2.5 2.5 0 0 0 1.7-1.7C23 15.2 23 12 23 12ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg></a>
+    <a href="https://www.kick.com/teamglitch" target="_blank" rel="noopener" aria-label="Kick"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M3 2h6v6l4-4h6l-6 6 6 6h-6l-4-4v6H3V2Z"/></svg></a>
+  </div>
+</div>
 
-    <!-- Header -->
-    <div class="py-5 text-center" style="border-bottom: 1px solid #1e1e1e;">
-      <div class="container">
-        <p class="text-uppercase small mb-2" style="letter-spacing: 4px; color: #666;">Support</p>
-        <h1 class="fw-bold mb-3">Frequently Asked Questions</h1>
-        <p class="mb-0" style="color: #888; max-width: 480px; margin: 0 auto;">
-          Everything you need to know about TG6 backpacks, orders, and streaming.
-        </p>
-      </div>
+<main>
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker reveal">// SUPPORT</span>
+      <h1 class="reveal">Frequently Asked Questions</h1>
+      <p class="qa-sub reveal">Everything you need to know about TG6 backpacks, orders, and streaming.</p>
+      <p class="qa-group">The Backpack</p>
+      <details class="qa">
+        <summary>What is TG6 and what do you sell?</summary>
+        <div class="qa-body">TG6 (Team Glitch 6) is a live-streaming brand run by teamglitch6. We build and sell purpose-made IRL streaming backpacks — fully assembled rigs with the router, camera, capture card, and laptop pre-configured and ready to stream. Every unit is built and tested live on stream before it ships.</div>
+      </details>
+      <details class="qa">
+        <summary>What are the three tiers?</summary>
+        <div class="qa-body"><strong>Metro</strong> — T-Mobile Home Internet, built for city and suburban streamers with solid 5G coverage. The first unit we ship.<br><br>
+                <strong>Roamer</strong> — Peplink MAX Transit Duo with dual-SIM bonding (T-Mobile + Verizon). Built for areas where single-carrier coverage drops. Ships after Metro.<br><br>
+                <strong>Nomad</strong> — Starlink portable in roam mode. Designed for remote locations, international travel, and off-grid streaming. The most powerful tier.</div>
+      </details>
+      <details class="qa">
+        <summary>What does "stream output" mean — 1080p 60fps but camera is 4K?</summary>
+        <div class="qa-body">The Sony ZV-1 II shoots 4K 30fps clean HDMI output into the Elgato Cam Link 4K. OBS on the laptop takes that 4K signal and does two things at once: streams 1080p 60fps to Twitch, YouTube, and Kick (the platform standard), and records the raw 4K 30fps locally to storage. You stream at broadcast quality and archive in full resolution.</div>
+      </details>
+      <details class="qa">
+        <summary>Which platforms does the backpack stream to?</summary>
+        <div class="qa-body">All three tiers support simultaneous multistream to Twitch, YouTube, and Kick out of the box. The signal routes through NGINX RTMP on the laptop with an FFmpeg bridge for RTMPS platforms. You go live once and hit all three.</div>
+      </details>
+      <p class="qa-group">Orders &amp; Shipping</p>
+      <details class="qa">
+        <summary>When will Metro ship?</summary>
+        <div class="qa-body">Metro is the first unit in production. Prototype v1 is being built and tested live on stream — follow <a href="https://www.twitch.tv/teamglitch6" target="_blank">twitch.tv/teamglitch6</a> to watch the build in real time. Pricing and availability will be announced when the prototype passes the live stream test.</div>
+      </details>
+      <details class="qa">
+        <summary>Can I get notified when a tier becomes available?</summary>
+        <div class="qa-body">Yes. Go to the <a href="contact.html">contact page</a> and select "Notify me when Roamer/Nomad ships" from the topic dropdown, or use the subscribe form on the home page. You'll be the first to know when each tier opens.</div>
+      </details>
+      <details class="qa">
+        <summary>Do you ship internationally?</summary>
+        <div class="qa-body">Metro ships domestically (US) at launch. The Nomad tier — which uses Starlink's global roam network — is specifically designed for international use and will have international shipping options when it releases. More details on international availability will be posted before Nomad launch.</div>
+      </details>
+      <details class="qa">
+        <summary>What payment methods do you accept?</summary>
+        <div class="qa-body">Orders are processed via Stripe — all major credit and debit cards accepted. Apple Pay and Google Pay are also supported at checkout.</div>
+      </details>
+      <p class="qa-group">Returns &amp; Support</p>
+      <details class="qa">
+        <summary>What if something doesn't work when I receive it?</summary>
+        <div class="qa-body">Every unit is tested live on stream before it ships — you can watch the test VOD for your specific unit. If something is wrong on arrival, contact us through the <a href="contact.html">contact page</a> and we will make it right. Full return and warranty policy is available in the <a href="terms.html">Terms</a>.</div>
+      </details>
+      <details class="qa">
+        <summary>I have a question not answered here.</summary>
+        <div class="qa-body">Reach out on the <a href="contact.html">contact page</a> or catch teamglitch6 live on <a href="https://www.twitch.tv/teamglitch6" target="_blank">Twitch</a> — questions get answered in chat.</div>
+      </details>
     </div>
+  </section>
+</main>
 
-    <!-- FAQ -->
-    <div class="py-5">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-
-            <h6 class="fw-bold text-uppercase mb-3" style="letter-spacing: 2px; font-size: 11px; color: #666;">The Backpack</h6>
-            <div class="accordion mb-5" id="faqBackpack">
-
-              <div class="accordion-item tg6-tier-card border-0 mb-2">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed fw-semibold" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#faq1" style="background:#0a0a0a; color:#fff;">
-                    What is TG6 and what do you sell?
-                  </button>
-                </h2>
-                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqBackpack">
-                  <div class="accordion-body" style="color:#aaa;">
-                    TG6 (Team Glitch 6) is a live-streaming brand run by teamglitch6. We build and sell purpose-made IRL streaming backpacks — fully assembled rigs with the router, camera, capture card, and laptop pre-configured and ready to stream. Every unit is built and tested live on stream before it ships.
-                  </div>
-                </div>
-              </div>
-
-              <div class="accordion-item tg6-tier-card border-0 mb-2">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed fw-semibold" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#faq2" style="background:#0a0a0a; color:#fff;">
-                    What are the three tiers?
-                  </button>
-                </h2>
-                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqBackpack">
-                  <div class="accordion-body" style="color:#aaa;">
-                    <strong style="color:#fff;">Metro</strong> — T-Mobile Home Internet, built for city and suburban streamers with solid 5G coverage. The first unit we ship.<br><br>
-                    <strong style="color:#fff;">Roamer</strong> — Peplink MAX Transit Duo with dual-SIM bonding (T-Mobile + Verizon). Built for areas where single-carrier coverage drops. Ships after Metro.<br><br>
-                    <strong style="color:#fff;">Nomad</strong> — Starlink portable in roam mode. Designed for remote locations, international travel, and off-grid streaming. The most powerful tier.
-                  </div>
-                </div>
-              </div>
-
-              <div class="accordion-item tg6-tier-card border-0 mb-2">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed fw-semibold" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#faq3" style="background:#0a0a0a; color:#fff;">
-                    What does "stream output" mean — 1080p 60fps but camera is 4K?
-                  </button>
-                </h2>
-                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqBackpack">
-                  <div class="accordion-body" style="color:#aaa;">
-                    The Sony ZV-1 II shoots 4K 30fps clean HDMI output into the Elgato Cam Link 4K. OBS on the laptop takes that 4K signal and does two things at once: streams 1080p 60fps to Twitch, YouTube, and Kick (the platform standard), and records the raw 4K 30fps locally to storage. You stream at broadcast quality and archive in full resolution.
-                  </div>
-                </div>
-              </div>
-
-              <div class="accordion-item tg6-tier-card border-0 mb-2">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed fw-semibold" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#faq4" style="background:#0a0a0a; color:#fff;">
-                    Which platforms does the backpack stream to?
-                  </button>
-                </h2>
-                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqBackpack">
-                  <div class="accordion-body" style="color:#aaa;">
-                    All three tiers support simultaneous multistream to Twitch, YouTube, and Kick out of the box. The signal routes through NGINX RTMP on the laptop with an FFmpeg bridge for RTMPS platforms. You go live once and hit all three.
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <h6 class="fw-bold text-uppercase mb-3" style="letter-spacing: 2px; font-size: 11px; color: #666;">Orders & Shipping</h6>
-            <div class="accordion mb-5" id="faqOrders">
-
-              <div class="accordion-item tg6-tier-card border-0 mb-2">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed fw-semibold" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#faq5" style="background:#0a0a0a; color:#fff;">
-                    When will Metro ship?
-                  </button>
-                </h2>
-                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqOrders">
-                  <div class="accordion-body" style="color:#aaa;">
-                    Metro is the first unit in production. Prototype v1 is being built and tested live on stream — follow <a href="https://www.twitch.tv/teamglitch6" target="_blank" style="color:#ccc;">twitch.tv/teamglitch6</a> to watch the build in real time. Pricing and availability will be announced when the prototype passes the live stream test.
-                  </div>
-                </div>
-              </div>
-
-              <div class="accordion-item tg6-tier-card border-0 mb-2">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed fw-semibold" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#faq6" style="background:#0a0a0a; color:#fff;">
-                    Can I get notified when a tier becomes available?
-                  </button>
-                </h2>
-                <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqOrders">
-                  <div class="accordion-body" style="color:#aaa;">
-                    Yes. Go to the <a href="contact.html" style="color:#ccc;">contact page</a> and select "Notify me when Roamer/Nomad ships" from the topic dropdown, or use the subscribe form on the home page. You'll be the first to know when each tier opens.
-                  </div>
-                </div>
-              </div>
-
-              <div class="accordion-item tg6-tier-card border-0 mb-2">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed fw-semibold" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#faq7" style="background:#0a0a0a; color:#fff;">
-                    Do you ship internationally?
-                  </button>
-                </h2>
-                <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqOrders">
-                  <div class="accordion-body" style="color:#aaa;">
-                    Metro ships domestically (US) at launch. The Nomad tier — which uses Starlink's global roam network — is specifically designed for international use and will have international shipping options when it releases. More details on international availability will be posted before Nomad launch.
-                  </div>
-                </div>
-              </div>
-
-              <div class="accordion-item tg6-tier-card border-0 mb-2">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed fw-semibold" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#faq8" style="background:#0a0a0a; color:#fff;">
-                    What payment methods do you accept?
-                  </button>
-                </h2>
-                <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqOrders">
-                  <div class="accordion-body" style="color:#aaa;">
-                    Orders are processed via Stripe — all major credit and debit cards accepted. Apple Pay and Google Pay are also supported at checkout.
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <h6 class="fw-bold text-uppercase mb-3" style="letter-spacing: 2px; font-size: 11px; color: #666;">Returns & Support</h6>
-            <div class="accordion mb-5" id="faqSupport">
-
-              <div class="accordion-item tg6-tier-card border-0 mb-2">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed fw-semibold" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#faq9" style="background:#0a0a0a; color:#fff;">
-                    What if something doesn't work when I receive it?
-                  </button>
-                </h2>
-                <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqSupport">
-                  <div class="accordion-body" style="color:#aaa;">
-                    Every unit is tested live on stream before it ships — you can watch the test VOD for your specific unit. If something is wrong on arrival, contact us through the <a href="contact.html" style="color:#ccc;">contact page</a> and we will make it right. Full return and warranty policy is available in the <a href="terms.html" style="color:#ccc;">Terms</a>.
-                  </div>
-                </div>
-              </div>
-
-              <div class="accordion-item tg6-tier-card border-0 mb-2">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed fw-semibold" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#faq10" style="background:#0a0a0a; color:#fff;">
-                    I have a question not answered here.
-                  </button>
-                </h2>
-                <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqSupport">
-                  <div class="accordion-body" style="color:#aaa;">
-                    Reach out on the <a href="contact.html" style="color:#ccc;">contact page</a> or catch teamglitch6 live on <a href="https://www.twitch.tv/teamglitch6" target="_blank" style="color:#ccc;">Twitch</a> — questions get answered in chat.
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-      </div>
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <img src="img/brand/tg6-wordmark.png" alt="TG6" height="28" width="55" />
+    <nav class="footer-links" aria-label="Footer">
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="https://glitch6-dev.github.io/DigitalServices/" target="_blank" rel="noopener">TG6·dev</a>
+    </nav>
+    <div class="socials">
+      <a href="https://www.twitch.tv/teamglitch6" target="_blank" rel="noopener" aria-label="Twitch"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M4 2 2 6v14h5v2h3l2-2h4l5-5V2H4Zm15 12-3 3h-5l-2 2v-2H5V4h14v10ZM13 7h2v5h-2V7Zm-5 0h2v5H8V7Z"/></svg></a>
+      <a href="https://www.youtube.com/channel/UC7KaaAFaf3LXI2Xcl7P9Ilw" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.7-1.7C19.4 5.2 12 5.2 12 5.2s-7.4 0-8.9.4A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.7 1.7c1.5.4 8.9.4 8.9.4s7.4 0 8.9-.4a2.5 2.5 0 0 0 1.7-1.7C23 15.2 23 12 23 12ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg></a>
+      <a href="https://www.kick.com/teamglitch" target="_blank" rel="noopener" aria-label="Kick"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M3 2h6v6l4-4h6l-6 6 6 6h-6l-4-4v6H3V2Z"/></svg></a>
     </div>
+    <p class="mono footer-tag">// STREAM FROM ANYWHERE.</p>
+    <p class="footer-copy">© 2026 TG6. All rights reserved.</p>
+  </div>
+</footer>
 
-    <!-- Footer -->
-    <div class="py-3 footer-copyright">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-8">
-            <span class="me-3 small">&copy;2026 <b>TG6</b>. All rights reserved.</span>
-            <a class="text-secondary small mx-2 text-decoration-none" href="about.html">About</a>
-            <a class="text-secondary small mx-2 text-decoration-none" href="faq.html">FAQ</a>
-            <a class="text-secondary small mx-2 text-decoration-none" href="terms.html">Terms</a>
-            <a class="text-secondary small mx-2 text-decoration-none" href="privacy.html">Privacy</a>
-            <a class="text-secondary small mx-2 text-decoration-none" href="https://glitch6-dev.github.io/DigitalServices/" target="_blank" rel="noopener">TG6&middot;dev</a>
-          </div>
-          <div class="col-md-4 text-end hide-on-mobile">
-            <a target="_blank" rel="noopener" href="https://www.twitch.tv/teamglitch6" class="r-iconbtn" data-icon="twitch"></a>
-            <a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UC7KaaAFaf3LXI2Xcl7P9Ilw" class="r-iconbtn" data-icon="youtube"></a>
-            <a target="_blank" rel="noopener" href="https://www.kick.com/teamglitch" class="r-iconbtn" data-icon="kick"></a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script src="vender/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="js/icons.js"></script>
-    <script>
-      document.querySelectorAll('[data-icon]').forEach(function (el) {
-        var k = el.getAttribute('data-icon');
-        if (window.TG6_ICONS && TG6_ICONS[k]) el.innerHTML = TG6_ICONS[k];
-      });
-    </script>
-    <script src="js/script.js"></script>
-  </body>
+<script src="js/main.js"></script>
+</body>
 </html>
