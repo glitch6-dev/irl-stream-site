@@ -1,175 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TG6 | About</title>
-    <meta name="description" content="TG6 — IRL streaming backpacks built by a streamer, for streamers." />
-    <link rel="stylesheet" href="vender/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="vender/remixicon/remixicon.css" />
-    <link rel="stylesheet" href="vender/swiper-js/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TG6 | About</title>
+  <meta name="description" content="TG6 — IRL streaming backpacks built by a streamer, for streamers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png" />
+  <link rel="shortcut icon" href="img/fav/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-icon-180x180.png" />
+  <meta name="theme-color" content="#07060c" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="glow" aria-hidden="true"></div>
 
-      <!-- Favicon (TG6) -->
-    <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png" />
-    <link rel="shortcut icon" href="img/fav/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-icon-180x180.png" />
-    <link rel="manifest" href="img/fav/manifest.json" />
-    <meta name="theme-color" content="#000000" />
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg osahan-nav p-0 border-bottom navbar-dark">
-      <div class="container-fluid px-3">
-        <a class="navbar-brand py-3 pe-3 border-end" href="index.html">
-          <span class="fw-bold text-white fs-5 px-1">TG6</span>
-        </a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 osahan-nav-navbar-nav">
-            <li class="nav-item"><a class="nav-link text-uppercase" href="index.html">Shop</a></li>
-            <li class="nav-item"><a class="nav-link active text-uppercase" href="about.html">About</a></li>
-            <li class="nav-item"><a class="nav-link text-uppercase" href="contact.html">Contact</a></li>
-            <li class="nav-item"><a class="nav-link text-uppercase d-inline-flex align-items-center gap-1"
-              href="https://glitch6-dev.github.io/DigitalServices/" target="_blank" rel="noopener">
-              TG6&middot;dev <span class="r-icon" data-icon="external" style="width:13px;height:13px;"></span></a></li>
-          </ul>
-        </div>
-        <div class="text-end" style="margin-right:10px">
-          <a target="_blank" rel="noopener" href="https://www.twitch.tv/teamglitch6" class="r-iconbtn" data-icon="twitch"></a>
-          <a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UC7KaaAFaf3LXI2Xcl7P9Ilw" class="r-iconbtn" data-icon="youtube"></a>
-          <a target="_blank" rel="noopener" href="https://www.kick.com/teamglitch" class="r-iconbtn" data-icon="kick"></a>
-        </div>
-        <button class="navbar-toggler border-0 shadow-none" type="button"
-          data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="ri-menu-3-line text-white"></i>
-        </button>
-      </div>
+<header class="nav" id="top">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html" aria-label="TG6 home">
+      <img src="img/brand/tg6-wordmark.png" alt="TG6" height="34" width="67" />
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://glitch6-dev.github.io/DigitalServices/" target="_blank" rel="noopener">TG6·dev ↗</a>
     </nav>
+    <span class="status-dot nav-status" aria-hidden="true">● ONLINE</span>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="index.html">Shop</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="https://glitch6-dev.github.io/DigitalServices/" target="_blank" rel="noopener">TG6·dev ↗</a>
+  <div class="socials">
+    <a href="https://www.twitch.tv/teamglitch6" target="_blank" rel="noopener" aria-label="Twitch"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M4 2 2 6v14h5v2h3l2-2h4l5-5V2H4Zm15 12-3 3h-5l-2 2v-2H5V4h14v10ZM13 7h2v5h-2V7Zm-5 0h2v5H8V7Z"/></svg></a>
+    <a href="https://www.youtube.com/channel/UC7KaaAFaf3LXI2Xcl7P9Ilw" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.7-1.7C19.4 5.2 12 5.2 12 5.2s-7.4 0-8.9.4A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.7 1.7c1.5.4 8.9.4 8.9.4s7.4 0 8.9-.4a2.5 2.5 0 0 0 1.7-1.7C23 15.2 23 12 23 12ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg></a>
+    <a href="https://www.kick.com/teamglitch" target="_blank" rel="noopener" aria-label="Kick"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M3 2h6v6l4-4h6l-6 6 6 6h-6l-4-4v6H3V2Z"/></svg></a>
+  </div>
+</div>
 
-    <!-- Hero -->
-    <header class="py-5" style="background: url('img/about-bg.svg') center center / cover no-repeat, #020304; border-bottom: 1px solid #1e1e1e;">
-      <div class="container px-4">
-        <div class="row justify-content-center">
-          <div class="col-lg-7 text-center my-5">
-            <p class="text-uppercase small fw-bold mb-3" style="letter-spacing: 4px; color: #00FFAA; text-shadow: 0 0 20px rgba(0,255,170,0.35);">The Brand</p>
-            <h1 class="display-4 fw-bold text-white mb-4" style="text-shadow: 0 2px 24px rgba(0,0,0,0.85);">Built by a streamer.<br>For streamers.</h1>
-            <p class="lead fw-normal mb-4" style="color: #ccc; text-shadow: 0 1px 12px rgba(0,0,0,0.9);">
-              TG6 started as a streaming channel and became something bigger — a brand built around the gear, the grind, and the community.
-            </p>
-            <a class="btn btn-light btn-hov2 fw-bold rounded-0 shadow-none border-0 px-5 py-3 text-uppercase mt-2" href="#story">Our Story</a>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- Story -->
-    <section class="py-5" id="story" style="border-bottom: 1px solid #1e1e1e;">
-      <div class="container my-5">
-        <div class="row gx-5 align-items-center">
-          <div class="col-lg-6">
-            <div class="tg6-placeholder d-flex align-items-center justify-content-center" style="min-height:400px; aspect-ratio: unset;">
-              <div class="text-center">
-                <i class="ri-image-line fs-1 mb-2 d-block" style="color:#333;"></i>
-                <p class="small mb-0" style="color:#444;">Photo coming soon</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 ps-lg-5 mt-5 mt-lg-0">
-            <h2 class="fw-bold mb-4">The Vision</h2>
-            <p class="mb-3" style="color: #aaa; line-height: 1.8;">
-              No backpack existed that was actually designed for IRL streaming. You either rigged something together yourself, or paid thousands for enterprise gear that was way more than you needed.
-            </p>
-            <p class="mb-3" style="color: #aaa; line-height: 1.8;">
-              TG6 fixes that. Three tiers — Metro, Roamer, Nomad — each built around the one question that actually matters: where do you stream?
-            </p>
-            <p style="color: #aaa; line-height: 1.8;">
-              Every product is tested live on stream. If it doesn't hold up on camera, in front of an audience, it doesn't ship.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- The Line -->
-    <section class="py-5" style="border-bottom: 1px solid #1e1e1e;">
-      <div class="container my-5 text-center">
-        <h2 class="fw-bold mb-2">The Backpack Line</h2>
-        <p class="mb-5" style="color: #666;">Three tiers. One goal — stream anywhere.</p>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="p-4 tg6-tier-card h-100">
-              <i class="ri-building-2-fill fs-2 mb-3 d-block" style="color:#aaa;"></i>
-              <h6 class="fw-bold text-uppercase mb-2">Metro</h6>
-              <p class="small mb-3" style="color:#888;">T-Mobile Home Internet. City streets. Plug in and go.</p>
-              <a href="products/metro.html" class="btn btn-dark btn-hov rounded-0 px-4 small">VIEW</a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="p-4 tg6-tier-card h-100">
-              <i class="ri-road-map-fill fs-2 mb-3 d-block" style="color:#aaa;"></i>
-              <h6 class="fw-bold text-uppercase mb-2">Roamer</h6>
-              <p class="small mb-3" style="color:#888;">Peplink dual-SIM bonding. Two carriers. Zero dropped streams.</p>
-              <a href="products/roamer.html" class="btn btn-dark btn-hov rounded-0 px-4 small">COMING SOON</a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="p-4 tg6-tier-card h-100">
-              <i class="ri-earth-fill fs-2 mb-3 d-block" style="color:#aaa;"></i>
-              <h6 class="fw-bold text-uppercase mb-2">Nomad</h6>
-              <p class="small mb-3" style="color:#888;">Starlink. Stream from anywhere on earth. No exceptions.</p>
-              <a href="products/nomad.html" class="btn btn-dark btn-hov rounded-0 px-4 small">COMING SOON</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Watch Live -->
-    <section class="py-5">
-      <div class="container">
-        <div class="row align-items-center justify-content-center justify-content-md-between g-4">
-          <div class="col-xl-8 col-lg-9 col-12 text-center text-md-start">
-            <h4 class="fw-bold mb-1">Watch the whole thing happen live.</h4>
-            <p class="mb-0" style="color:#888;">Prototyping, testing, streaming — all of it goes on live on teamglitch6.</p>
-          </div>
-          <div class="col-xl-2 col-lg-2 col-12 text-center text-md-start">
-            <a href="https://www.twitch.tv/teamglitch6" class="btn btn-dark btn-hov rounded-0 px-5" target="_blank">WATCH LIVE</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <div class="py-3 footer-copyright">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-8">
-            <span class="me-3 small">&copy;2026 <b>TG6</b>. All rights reserved.</span>
-            <a class="text-secondary small mx-2 text-decoration-none" href="about.html">About</a>
-            <a class="text-secondary small mx-2 text-decoration-none" href="faq.html">FAQ</a>
-            <a class="text-secondary small mx-2 text-decoration-none" href="terms.html">Terms</a>
-            <a class="text-secondary small mx-2 text-decoration-none" href="privacy.html">Privacy</a>
-            <a class="text-secondary small mx-2 text-decoration-none" href="https://glitch6-dev.github.io/DigitalServices/" target="_blank" rel="noopener">TG6&middot;dev</a>
-          </div>
-          <div class="col-md-4 text-end hide-on-mobile">
-            <a target="_blank" rel="noopener" href="https://www.twitch.tv/teamglitch6" class="r-iconbtn" data-icon="twitch"></a>
-            <a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UC7KaaAFaf3LXI2Xcl7P9Ilw" class="r-iconbtn" data-icon="youtube"></a>
-            <a target="_blank" rel="noopener" href="https://www.kick.com/teamglitch" class="r-iconbtn" data-icon="kick"></a>
-          </div>
-        </div>
+<main>
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker reveal">// ABOUT</span>
+      <h1 class="reveal glitch">Built by a streamer.<br />For streamers.</h1>
+      <p class="reveal" style="margin-top:24px;">TG6 started as a streaming channel and became something bigger — a brand built around the gear, the grind, and the community.</p>
+      <p class="reveal" style="margin-top:16px;">No backpack existed that was actually designed for IRL streaming. TG6 fixes that: three tiers — Metro, Roamer, Nomad — built around the one question that matters: where do you stream? Every product is tested live on stream. If it doesn't hold up on camera, it doesn't ship.</p>
+      <div class="reveal" style="margin-top:32px;">
+        <a class="btn" href="https://www.twitch.tv/teamglitch6" target="_blank" rel="noopener">Watch it happen live ↗</a>
       </div>
     </div>
+  </section>
+</main>
 
-    <script src="vender/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="js/icons.js"></script>
-    <script>
-      document.querySelectorAll('[data-icon]').forEach(function (el) {
-        var k = el.getAttribute('data-icon');
-        if (window.TG6_ICONS && TG6_ICONS[k]) el.innerHTML = TG6_ICONS[k];
-      });
-    </script>
-    <script src="js/script.js"></script>
-  </body>
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <img src="img/brand/tg6-wordmark.png" alt="TG6" height="28" width="55" />
+    <nav class="footer-links" aria-label="Footer">
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="https://glitch6-dev.github.io/DigitalServices/" target="_blank" rel="noopener">TG6·dev</a>
+    </nav>
+    <div class="socials">
+      <a href="https://www.twitch.tv/teamglitch6" target="_blank" rel="noopener" aria-label="Twitch"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M4 2 2 6v14h5v2h3l2-2h4l5-5V2H4Zm15 12-3 3h-5l-2 2v-2H5V4h14v10ZM13 7h2v5h-2V7Zm-5 0h2v5H8V7Z"/></svg></a>
+      <a href="https://www.youtube.com/channel/UC7KaaAFaf3LXI2Xcl7P9Ilw" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.7-1.7C19.4 5.2 12 5.2 12 5.2s-7.4 0-8.9.4A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.7 1.7c1.5.4 8.9.4 8.9.4s7.4 0 8.9-.4a2.5 2.5 0 0 0 1.7-1.7C23 15.2 23 12 23 12ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg></a>
+      <a href="https://www.kick.com/teamglitch" target="_blank" rel="noopener" aria-label="Kick"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M3 2h6v6l4-4h6l-6 6 6 6h-6l-4-4v6H3V2Z"/></svg></a>
+    </div>
+    <p class="mono footer-tag">// STREAM FROM ANYWHERE.</p>
+    <p class="footer-copy">© 2026 TG6. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
 </html>
