@@ -197,3 +197,66 @@ main, header, footer { position: relative; z-index: 2; }
 #form-status.err { color: #f87171; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; clip-path: inset(50%); overflow: hidden; }
 @media (max-width: 520px) { .sub-row { flex-direction: column; } }
+
+/* ============ PRODUCT PAGES ============ */
+.product-hero { padding: 64px 0 56px; overflow: hidden; }
+.product-hero-inner { display: grid; grid-template-columns: 1.05fr .95fr; gap: 44px; align-items: center; }
+.product-hero h1 { font-size: clamp(2.6rem, 6vw, 4rem); }
+.product-hero h1 .dot { color: var(--cyan); }
+.price-row { display: flex; align-items: baseline; gap: 16px; font-family: var(--font-mono); margin: 10px 0 4px; }
+.price-row .price { font-size: 24px; color: var(--text); }
+.hero-specs { display: flex; gap: 22px; flex-wrap: wrap; margin: 14px 0 24px; font-family: var(--font-mono); font-size: 12px; color: var(--green); letter-spacing: 1px; }
+.cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.product-art { position: relative; }
+.product-art::before {
+  content: ""; position: absolute; inset: -12% -18%;
+  background: url("../img/brand/tg6-circuit.jpg") center/cover; opacity: .26; border-radius: 18px;
+  -webkit-mask-image: radial-gradient(70% 70% at 50% 50%, #000 30%, transparent 100%);
+          mask-image: radial-gradient(70% 70% at 50% 50%, #000 30%, transparent 100%);
+}
+.product-art img { position: relative; filter: drop-shadow(0 18px 48px #a855f733); }
+@media (max-width: 860px) { .product-hero-inner { grid-template-columns: 1fr; } .product-art { max-width: 320px; margin: 0 auto; order: -1; } }
+
+/* Sticky bar */
+.sticky-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; transform: translateY(110%);
+  transition: transform .25s ease; background: #0d0b16f2; backdrop-filter: blur(12px);
+  border-top: 1px solid var(--line); padding: 10px 0;
+}
+.sticky-bar.visible { transform: none; }
+.sticky-bar-inner { display: flex; align-items: center; gap: 18px; }
+.sticky-bar .mono { color: var(--text); font-size: 13px; letter-spacing: 1px; }
+.sticky-bar .btn { margin-left: auto; padding: 9px 20px; font-size: 13px; }
+
+/* Loadout manifest */
+.loadout { padding-top: 72px; }
+.loadout-list { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 6px 22px; }
+.load-row { display: flex; align-items: center; gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.load-row:last-child { border-bottom: none; }
+.load-row img, .load-tile { width: 58px; height: 58px; border-radius: 8px; background: #fff; object-fit: contain; flex: none; padding: 4px; }
+.load-tile { background: var(--bg); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; padding: 10px; }
+.load-name { color: var(--text); font-weight: 700; font-size: 15px; }
+.load-name .badge-pre { font-size: 11px; margin-left: 8px; }
+.load-role { font-size: 13px; color: var(--body); }
+.load-spec { margin-left: auto; text-align: right; font-family: var(--font-mono); font-size: 11px; color: var(--green); letter-spacing: 1px; flex: none; }
+.load-bar { height: 4px; border-radius: 2px; background: var(--grad); margin-top: 6px; margin-left: auto; transform-origin: right; transform: scaleX(0); transition: transform .9s ease .15s; }
+.load-row.in .load-bar { transform: none; }
+.load-note { font-size: 13px; color: var(--muted); margin-top: 14px; }
+.load-credit { font-size: 11px; color: var(--muted); margin-top: 6px; }
+.load-credit a { color: var(--muted); text-decoration: underline; }
+@media (max-width: 640px) {
+  .load-spec { display: none; }
+  .load-row { gap: 14px; }
+}
+
+/* Tier switch */
+.tier-switch { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.tier-item { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; transition: border-color .15s, transform .15s; }
+a.tier-item:hover { border-color: var(--purple); transform: translateY(-2px); }
+.tier-item.current { border-color: var(--cyan); }
+.tier-item .name { font-family: var(--font-display); color: var(--text); font-size: 17px; }
+@media (max-width: 640px) { .tier-switch { grid-template-columns: 1fr; } }
+
+/* Closing CTA */
+.closing-cta { text-align: center; padding-bottom: 40px; }
+.closing-cta h2 { margin-bottom: 22px; }

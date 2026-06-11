@@ -37,6 +37,23 @@
     revealEls.forEach(function (el) { el.classList.add("in"); });
   }
 
+  // Loadout rows: stagger-reveal + bar animation
+  var rows = document.querySelectorAll(".load-row");
+  if (rows.length && !reduced && "IntersectionObserver" in window) {
+    var lo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("in"); lo.unobserve(en.target); }
+      });
+    }, { threshold: 0.4 });
+    rows.forEach(function (r, i) {
+      r.classList.add("reveal");
+      r.style.transitionDelay = (i * 60) + "ms";
+      lo.observe(r);
+    });
+  } else {
+    rows.forEach(function (r) { r.classList.add("in", "reveal"); });
+  }
+
   // Count-ups: <span data-count="12" data-prefix="" data-suffix="H">0</span>
   var counters = document.querySelectorAll("[data-count]");
   function runCount(el) {
