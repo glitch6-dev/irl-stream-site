@@ -126,11 +126,13 @@ main, header, footer { position: relative; z-index: 2; }
 /* ============ HERO ============ */
 .hero { padding: 72px 0 64px; overflow: hidden; }
 .hero-inner { display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center; }
+.hero h1 { font-size: clamp(2.8rem, 6.5vw, 4.6rem); }
 .hero h1 em { font-style: normal; color: var(--purple); }
-.hero-copy .btn { margin-top: 8px; }
+.hero .kicker { font-size: 16px; }
+.hero-copy .btn { margin-top: 8px; font-size: 17px; padding: 16px 32px; }
 .hero-stats { display: flex; gap: 36px; margin-top: 40px; }
-.hero-stats dt { font-size: 22px; color: var(--cyan); }
-.hero-stats dd { font-size: 11px; color: var(--muted); letter-spacing: 2px; }
+.hero-stats dt { font-size: 26px; color: var(--cyan); }
+.hero-stats dd { font-size: 14px; color: var(--muted); letter-spacing: 2px; }
 .hero-art { position: relative; }
 .hero-art::before {
   content: ""; position: absolute; inset: -10% -16%;
@@ -142,15 +144,16 @@ main, header, footer { position: relative; z-index: 2; }
 @media (max-width: 860px) { .hero-inner { grid-template-columns: 1fr; } .hero-art { order: -1; max-width: 320px; margin: 0 auto; } }
 
 /* ============ FINDER (Signal Check) ============ */
-.finder-tiles { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+.lineup .kicker { font-size: 17px; text-align: center; margin-bottom: 22px; }
+.finder-tiles { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-bottom: 18px; }
 .finder-tile {
-  font-family: var(--font-mono); font-size: 13px; letter-spacing: 2px; cursor: pointer;
-  padding: 12px 22px; border-radius: 5px; background: none; color: var(--body);
+  font-family: var(--font-mono); font-size: 18px; letter-spacing: 2px; cursor: pointer;
+  padding: 16px 32px; border-radius: 5px; background: none; color: var(--body);
   border: 1px solid #475569; transition: border-color .15s, color .15s;
 }
 .finder-tile:hover { border-color: var(--cyan); color: var(--text); }
 .finder-tile.is-active { border-color: var(--cyan); color: var(--cyan); }
-.finder-line { min-height: 24px; font-size: 13px; color: var(--green); margin-bottom: 28px; }
+.finder-line { min-height: 30px; font-size: 16px; text-align: center; color: var(--green); margin-bottom: 28px; }
 .finder-line .caret { animation: blink 1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 
@@ -164,29 +167,31 @@ main, header, footer { position: relative; z-index: 2; }
 .pcard:hover { transform: translateY(-4px); border-color: var(--purple); box-shadow: 0 10px 34px #a855f722; }
 .pcard.is-rec { border-color: var(--cyan); box-shadow: 0 0 0 1px var(--cyan), 0 10px 40px #22d3ee2c; }
 .lineup.has-pick .pcard:not(.is-rec) { opacity: .45; }
-.tier-label { font-size: 11px; letter-spacing: 1.5px; }
+.tier-label { font-size: 15px; letter-spacing: 1.5px; }
 .pcard img { margin: 6px auto; max-height: 230px; object-fit: contain; }
-.pcard-name { font-family: var(--font-display); font-size: 20px; color: var(--text); }
+.pcard-name { font-family: var(--font-display); font-size: 28px; color: var(--text); }
 .pcard-row { display: flex; justify-content: space-between; align-items: baseline; }
-.pcard-price { font-family: var(--font-mono); font-size: 16px; color: var(--text); }
+.pcard-price { font-family: var(--font-mono); font-size: 22px; color: var(--text); }
+.pcard .badge-pre { font-size: 15px; }
 @media (max-width: 860px) { .cards { grid-template-columns: 1fr; } }
 
 /* ============ DEVBAND ============ */
 .devband { padding: 64px 0; }
 .devband-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-.devband-line { font-family: var(--font-display); font-size: clamp(1.2rem, 2.6vw, 1.7rem); color: var(--text); }
-.btn-dev { background: linear-gradient(90deg, #16a34a, #a3e635); }
+.devband-line { font-family: var(--font-display); font-size: clamp(1.6rem, 3.2vw, 2.2rem); color: var(--text); }
+.btn-dev { background: linear-gradient(90deg, #16a34a, #a3e635); font-size: 17px; padding: 16px 32px; }
 
 /* ============ SUBSCRIBE ============ */
 .subscribe-inner { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
-.sub-row { display: flex; gap: 10px; width: min(440px, 100%); margin-top: 16px; }
+.sub-row { display: flex; gap: 10px; width: min(540px, 100%); margin-top: 16px; }
 .sub-row input {
   flex: 1; background: var(--panel); border: 1px solid var(--line); border-radius: 5px;
-  color: var(--text); padding: 13px 16px; font-family: var(--font-body); font-size: 15px;
+  color: var(--text); padding: 16px 20px; font-family: var(--font-body); font-size: 18px;
 }
+.sub-row .btn { font-size: 17px; }
 .sub-row input::placeholder { color: var(--muted); }
 .hp { display: none; }
-#form-status { font-size: 13px; min-height: 20px; color: var(--green); }
+#form-status { font-size: 15px; min-height: 22px; color: var(--green); }
 #form-status.err { color: #f87171; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; clip-path: inset(50%); overflow: hidden; }
 @media (max-width: 520px) { .sub-row { flex-direction: column; } }
