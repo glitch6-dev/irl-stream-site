@@ -38,7 +38,7 @@ p { max-width: 70ch; }
   text-transform: uppercase; color: var(--cyan); margin-bottom: 14px; display: block;
 }
 .mono { font-family: var(--font-mono); }
-.badge-pre { font-family: var(--font-mono); font-size: 12px; color: var(--magenta); letter-spacing: 1px; }
+.badge-pre { font-family: var(--font-mono); font-size: 14px; color: var(--magenta); letter-spacing: 1px; }
 .status-dot { font-family: var(--font-mono); font-size: 11px; color: var(--green); letter-spacing: 1px; }
 .btn {
   display: inline-block; font-family: var(--font-body); font-weight: 700; font-size: 14px;
@@ -197,23 +197,16 @@ main, header, footer { position: relative; z-index: 2; }
 @media (max-width: 520px) { .sub-row { flex-direction: column; } }
 
 /* ============ PRODUCT PAGES ============ */
-.product-hero { padding: 64px 0 56px; overflow: hidden; }
-.product-hero-inner { display: grid; grid-template-columns: 1.05fr .95fr; gap: 44px; align-items: center; }
+.product-hero { padding: 64px 0 40px; overflow: hidden; }
+.product-hero-inner { display: block; max-width: 760px; }
 .product-hero h1 { font-size: clamp(2.6rem, 6vw, 4rem); }
 .product-hero h1 .dot { color: var(--cyan); }
 .price-row { display: flex; align-items: baseline; gap: 16px; font-family: var(--font-mono); margin: 10px 0 4px; }
-.price-row .price { font-size: 24px; color: var(--text); }
-.hero-specs { display: flex; gap: 22px; flex-wrap: wrap; margin: 14px 0 24px; font-family: var(--font-mono); font-size: 12px; color: var(--green); letter-spacing: 1px; }
+.price-row .price { font-size: 28px; color: var(--text); }
+.hero-specs { display: flex; gap: 22px; flex-wrap: wrap; margin: 16px 0 26px; font-family: var(--font-mono); font-size: 16px; color: var(--green); letter-spacing: 1.5px; }
 .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
 .product-art { position: relative; }
-.product-art::before {
-  content: ""; position: absolute; inset: -12% -18%;
-  background: url("../img/brand/tg6-circuit.jpg") center/cover; opacity: .26; border-radius: 18px;
-  -webkit-mask-image: radial-gradient(70% 70% at 50% 50%, #000 30%, transparent 100%);
-          mask-image: radial-gradient(70% 70% at 50% 50%, #000 30%, transparent 100%);
-}
 .product-art img { position: relative; filter: drop-shadow(0 18px 48px #a855f733); }
-@media (max-width: 860px) { .product-hero-inner { grid-template-columns: 1fr; } .product-art { max-width: 320px; margin: 0 auto; order: -1; } }
 
 /* Sticky bar */
 .sticky-bar {
@@ -223,36 +216,52 @@ main, header, footer { position: relative; z-index: 2; }
 }
 .sticky-bar.visible { transform: none; }
 .sticky-bar-inner { display: flex; align-items: center; gap: 18px; }
-.sticky-bar .mono { color: var(--text); font-size: 13px; letter-spacing: 1px; }
-.sticky-bar .btn { margin-left: auto; padding: 9px 20px; font-size: 13px; }
+.sticky-bar .mono { color: var(--text); font-size: 16px; letter-spacing: 1px; }
+.sticky-bar .btn { margin-left: auto; padding: 11px 24px; font-size: 16px; }
 
 /* Loadout manifest */
-.loadout { padding-top: 72px; }
+.loadout { padding-top: 56px; position: relative; overflow: hidden; }
+.loadout::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: url("../img/brand/tg6-circuit.jpg") center/cover; opacity: .2;
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 14%, #000 86%, transparent);
+          mask-image: linear-gradient(180deg, transparent, #000 14%, #000 86%, transparent);
+}
+.loadout-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 48px; align-items: start; position: relative; z-index: 1; }
+.loadout-art { position: sticky; top: 96px; }
+.loadout-main { min-width: 0; }
 .loadout-list { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 6px 22px; }
 .load-row { display: flex; align-items: center; gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--line); }
 .load-row:last-child { border-bottom: none; }
 .load-row img, .load-tile { width: 58px; height: 58px; border-radius: 8px; background: #fff; object-fit: contain; flex: none; padding: 4px; }
 .load-tile { background: var(--bg); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; padding: 10px; }
-.load-name { color: var(--text); font-weight: 700; font-size: 15px; }
-.load-name .badge-pre { font-size: 11px; margin-left: 8px; }
-.load-role { font-size: 13px; color: var(--body); }
-.load-spec { margin-left: auto; text-align: right; font-family: var(--font-mono); font-size: 11px; color: var(--green); letter-spacing: 1px; flex: none; }
+.load-name { color: var(--text); font-weight: 700; font-size: 18px; }
+.load-name .badge-pre { font-size: 14px; margin-left: 8px; }
+.load-role { font-size: 16px; color: var(--body); }
+.load-spec { margin-left: auto; text-align: right; font-family: var(--font-mono); font-size: 14px; color: var(--green); letter-spacing: 1px; flex: none; }
 .load-bar { height: 4px; border-radius: 2px; background: var(--grad); margin-top: 6px; margin-left: auto; transform-origin: right; transform: scaleX(0); transition: transform .9s ease .15s; }
 .load-row.in .load-bar { transform: none; }
-.load-note { font-size: 13px; color: var(--muted); margin-top: 14px; }
-.load-credit { font-size: 11px; color: var(--muted); margin-top: 6px; }
+.load-note { font-size: 16px; color: var(--muted); margin-top: 16px; }
+.load-credit { font-size: 13px; color: var(--muted); margin-top: 6px; }
 .load-credit a { color: var(--muted); text-decoration: underline; }
+@media (max-width: 860px) {
+  .loadout-grid { grid-template-columns: 1fr; gap: 28px; }
+  .loadout-art { position: static; max-width: 340px; margin: 0 auto; }
+}
 @media (max-width: 640px) {
   .load-spec { display: none; }
   .load-row { gap: 14px; }
 }
 
 /* Tier switch */
+.tier-switch-wrap { position: relative; z-index: 1; margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--line); }
 .tier-switch { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.tier-item { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; transition: border-color .15s, transform .15s; }
+.tier-item { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; transition: border-color .15s, transform .15s; }
 a.tier-item:hover { border-color: var(--purple); transform: translateY(-2px); }
 .tier-item.current { border-color: var(--cyan); }
-.tier-item .name { font-family: var(--font-display); color: var(--text); font-size: 17px; }
+.tier-item .mono { font-size: 15px; letter-spacing: 1.5px; }
+.tier-item .status-dot { font-size: 14px; }
+.tier-item .name { font-family: var(--font-display); color: var(--text); font-size: 22px; }
 @media (max-width: 640px) { .tier-switch { grid-template-columns: 1fr; } }
 
 /* Closing CTA */
