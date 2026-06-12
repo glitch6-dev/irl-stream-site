@@ -60,10 +60,12 @@ PNG_SIZES = {
 def main():
     for name, size in PNG_SIZES.items():
         make(size).save(os.path.join(HERE, name))
-    # Multi-resolution .ico from a 256 master
+    # Multi-resolution .ico from a 256 master; copy at repo root because
+    # browsers/crawlers request /favicon.ico unprompted and cache the 404
     master = make(256)
-    master.save(os.path.join(HERE, "favicon.ico"),
-                sizes=[(16, 16), (32, 32), (48, 48), (64, 64)])
+    for dest in (HERE, os.path.join(HERE, "..", "..")):
+        master.save(os.path.join(dest, "favicon.ico"),
+                    sizes=[(16, 16), (32, 32), (48, 48), (64, 64)])
     # High-res brand master for reuse
     make(512).save(os.path.join(HERE, "tg6-mark-512.png"))
     print(f"Generated {len(PNG_SIZES)} PNGs + favicon.ico + tg6-mark-512.png")
