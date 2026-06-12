@@ -153,6 +153,14 @@ main, header, footer { position: relative; z-index: 2; }
 .finder-tile:hover { border-color: var(--cyan); color: var(--text); }
 .finder-tile.is-active { border-color: var(--cyan); color: var(--cyan); }
 .finder-line { min-height: 30px; font-size: 16px; text-align: center; color: var(--green); margin-bottom: 28px; }
+@media (max-width: 600px) {
+  .finder-tiles { flex-wrap: nowrap; gap: 8px; }
+  .finder-tile {
+    flex: 1 1 0; min-width: 0; text-align: center; white-space: nowrap;
+    padding: 14px 4px; letter-spacing: .5px;
+    font-size: clamp(11px, 3vw, 18px);
+  }
+}
 .finder-line .caret { animation: blink 1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 
