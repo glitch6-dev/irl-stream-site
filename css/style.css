@@ -34,7 +34,7 @@ p { max-width: 70ch; }
 
 /* 3. UTILITIES */
 .kicker {
-  font-family: var(--font-mono); font-size: 12px; letter-spacing: 2.5px;
+  font-family: var(--font-mono); font-size: 17px; letter-spacing: 2.5px;
   text-transform: uppercase; color: var(--cyan); margin-bottom: 14px; display: block;
 }
 .mono { font-family: var(--font-mono); }
@@ -128,7 +128,6 @@ main, header, footer { position: relative; z-index: 2; }
 .hero-inner { display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center; }
 .hero h1 { font-size: clamp(2.8rem, 6.5vw, 4.6rem); }
 .hero h1 em { font-style: normal; color: var(--purple); }
-.hero .kicker { font-size: 16px; }
 .hero-copy .btn { margin-top: 8px; font-size: 17px; padding: 16px 32px; }
 .hero-stats { display: flex; gap: 36px; margin-top: 40px; }
 .hero-stats dt { font-size: 26px; color: var(--cyan); }
@@ -144,7 +143,7 @@ main, header, footer { position: relative; z-index: 2; }
 @media (max-width: 860px) { .hero-inner { grid-template-columns: 1fr; } .hero-art { order: -1; max-width: 320px; margin: 0 auto; } }
 
 /* ============ FINDER (Signal Check) ============ */
-.lineup .kicker { font-size: 17px; text-align: center; margin-bottom: 22px; }
+.lineup .kicker { text-align: center; margin-bottom: 22px; }
 .finder-tiles { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-bottom: 18px; }
 .finder-tile {
   font-family: var(--font-mono); font-size: 18px; letter-spacing: 2px; cursor: pointer;
@@ -183,7 +182,8 @@ main, header, footer { position: relative; z-index: 2; }
 
 /* ============ SUBSCRIBE ============ */
 .subscribe-inner { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
-.sub-row { display: flex; gap: 10px; width: min(540px, 100%); margin-top: 16px; }
+#subscribe-form { width: min(720px, 100%); }
+.sub-row { display: flex; gap: 10px; width: 100%; margin-top: 16px; }
 .sub-row input {
   flex: 1; background: var(--panel); border: 1px solid var(--line); border-radius: 5px;
   color: var(--text); padding: 16px 20px; font-family: var(--font-body); font-size: 18px;
