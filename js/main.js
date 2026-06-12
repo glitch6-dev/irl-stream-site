@@ -82,12 +82,17 @@
     counters.forEach(runCount);
   }
 
-  // Sticky product bar (product pages): show after hero scrolls past
+  // Sticky product bar (product pages): show shortly after scrolling begins
   var bar = document.querySelector(".sticky-bar");
-  var heroSentinel = document.querySelector(".product-hero");
-  if (bar && heroSentinel && "IntersectionObserver" in window) {
-    new IntersectionObserver(function (entries) {
-      bar.classList.toggle("visible", !entries[0].isIntersecting);
-    }, { threshold: 0 }).observe(heroSentinel);
+  var hero = document.querySelector(".product-hero");
+  if (bar && hero) {
+    var updateBar = function () {
+      // reveal once the hero is ~halfway scrolled past, not only when fully gone
+      var trigger = Math.max(120, hero.offsetHeight * 0.45);
+      bar.classList.toggle("visible", window.scrollY > trigger);
+    };
+    window.addEventListener("scroll", updateBar, { passive: true });
+    window.addEventListener("resize", updateBar, { passive: true });
+    updateBar();
   }
 })();

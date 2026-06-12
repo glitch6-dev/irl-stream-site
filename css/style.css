@@ -264,10 +264,6 @@ a.tier-item:hover { border-color: var(--purple); transform: translateY(-2px); }
 .tier-item .name { font-family: var(--font-display); color: var(--text); font-size: 22px; }
 @media (max-width: 640px) { .tier-switch { grid-template-columns: 1fr; } }
 
-/* Closing CTA */
-.closing-cta { text-align: center; padding-bottom: 40px; }
-.closing-cta h2 { margin-bottom: 22px; }
-
 /* ============ CONTACT FORM ============ */
 .contact-form { display: flex; flex-direction: column; gap: 14px; max-width: 560px; margin-top: 28px; }
 .contact-form input, .contact-form select, .contact-form textarea {
