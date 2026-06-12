@@ -161,6 +161,10 @@ main, header, footer { position: relative; z-index: 2; }
     font-size: clamp(11px, 3vw, 18px);
   }
 }
+@media (max-width: 360px) {
+  .finder-tiles { gap: 6px; }
+  .finder-tile { padding: 13px 2px; letter-spacing: 0; font-size: clamp(10px, 3.2vw, 14px); }
+}
 .finder-line .caret { animation: blink 1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 
