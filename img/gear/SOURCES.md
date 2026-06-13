@@ -14,6 +14,7 @@ Pulled 2026-06-11. Every file below was visually verified to show the right prod
 | ulanzi-vl49-led.png | Ulanzi VL49 RGB LED light (800×800) | ulanzi.com Shopify CDN product image | Manufacturer marketing image |
 | np-f970-battery.jpg | Sony NP-F970 battery (910×910) | spectratech.gr (Sony official render mirror) | Manufacturer marketing image |
 | sandisk-high-endurance.png | SanDisk High Endurance microSD 32GB (1680×1680) | shop.sandisk.com official gallery asset | Manufacturer marketing image |
+| dell-latitude-7420.png | Dell Latitude 7420 14" laptop, open (900×900, transparent) | i.dell.com CDN (DellContent media-gallery, png-alpha export) | Manufacturer marketing image — added 2026-06-13 (encoding laptop in loadout) |
 
 Licensing note: the two Commons files (Sony camera) are free-licensed (attribution required).
 The manufacturer/carrier shots are standard product marketing images — commonly used by
