@@ -86,18 +86,13 @@ main, header, footer { position: relative; z-index: 2; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .glitch, .scanline::after, .footer::before, .nav::after, .marquee-track { animation: none !important; }
+  .glitch, .scanline::after, .footer::before, .marquee-track { animation: none !important; }
   * { transition-duration: .01ms !important; }
 }
 
 /* ============ NAV ============ */
-.nav { position: sticky; top: 0; z-index: 50; background: #07060cb3; backdrop-filter: blur(0px); transition: backdrop-filter .2s, background .2s; border-bottom: 1px solid transparent; overflow: hidden; }
+.nav { position: sticky; top: 0; z-index: 50; background: #07060cb3; backdrop-filter: blur(0px); transition: backdrop-filter .2s, background .2s; border-bottom: 1px solid transparent; }
 .nav.scrolled { backdrop-filter: blur(14px); background: #07060ce6; border-bottom-color: var(--line); }
-.nav::after {
-  content: ""; position: absolute; bottom: 0; left: 0; width: 120px; height: 1px;
-  background: var(--grad); opacity: 0; transition: opacity .2s; animation: scan 6s linear infinite;
-}
-.nav.scrolled::after { opacity: 1; }
 .nav-inner { display: flex; align-items: center; gap: 28px; padding-top: 14px; padding-bottom: 14px; }
 .brand img { height: 34px; width: auto; }
 .nav-links { display: flex; gap: 24px; margin-left: auto; }
