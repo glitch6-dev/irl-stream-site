@@ -274,6 +274,29 @@ a.tier-item:hover { border-color: var(--purple); transform: translateY(-2px); }
 .tier-item .name { font-family: var(--font-display); color: var(--text); font-size: 22px; }
 @media (max-width: 640px) { .tier-switch { grid-template-columns: 1fr; } }
 
+/* Camera picker (optional upgrade — selection is visual only; the upgrade is added at Stripe checkout) */
+.camera-wrap { position: relative; z-index: 1; margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--line); }
+.camera-fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+.camera-fieldset legend { padding: 0; float: left; }
+.camera-note { clear: both; font-size: 16px; color: var(--muted); margin: 12px 0 0; max-width: 62ch; line-height: 1.5; }
+.camera-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; }
+.cam-card { position: relative; display: flex; flex-direction: column; gap: 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; cursor: pointer; transition: border-color .15s, transform .15s; }
+.cam-card:hover { border-color: var(--purple); transform: translateY(-2px); }
+.cam-radio { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.cam-card:has(.cam-radio:checked) { border-color: var(--cyan); box-shadow: inset 0 0 0 1px var(--cyan); }
+.cam-card:has(.cam-radio:focus-visible) { outline: 2px solid var(--cyan); outline-offset: 3px; }
+.cam-check { position: absolute; z-index: 2; top: 10px; right: 10px; font-family: var(--font-mono); font-size: 13px; letter-spacing: 1px; color: var(--cyan); background: rgba(7,6,12,.85); padding: 3px 9px; border-radius: 6px; opacity: 0; transition: opacity .15s; }
+.cam-card:has(.cam-radio:checked) .cam-check { opacity: 1; }
+.cam-media { width: 100%; aspect-ratio: 5 / 4; border-radius: 8px; background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.cam-media img { width: 100%; height: 100%; object-fit: contain; padding: 12px; }
+.cam-icon { width: 54px; height: 54px; color: #14121b; }
+.cam-label { font-family: var(--font-mono); font-size: 14px; letter-spacing: 1.5px; }
+.cam-name { font-family: var(--font-display); font-size: 20px; color: var(--text); line-height: 1.15; }
+.cam-role { font-size: 16px; color: var(--body); }
+.cam-signal { margin-top: auto; padding-top: 4px; font-family: var(--font-mono); font-size: 14px; letter-spacing: .5px; color: var(--muted); }
+.cam-card:has(.cam-radio:checked) .cam-state { color: var(--cyan); }
+@media (max-width: 640px) { .camera-grid { grid-template-columns: 1fr; } }
+
 /* ============ CONTACT FORM ============ */
 .contact-form { display: flex; flex-direction: column; gap: 14px; max-width: 560px; margin-top: 28px; }
 .contact-form input, .contact-form select, .contact-form textarea {
