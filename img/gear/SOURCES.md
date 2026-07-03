@@ -15,6 +15,8 @@ Pulled 2026-06-11. Every file below was visually verified to show the right prod
 | np-f970-battery.jpg | Sony NP-F970 battery (910×910) | spectratech.gr (Sony official render mirror) | Manufacturer marketing image |
 | sandisk-high-endurance.png | SanDisk High Endurance microSD 32GB (1680×1680) | shop.sandisk.com official gallery asset | Manufacturer marketing image |
 | dell-latitude-7420.png | Dell Latitude 7420 14" laptop, open (900×900, transparent) | i.dell.com CDN (DellContent media-gallery, png-alpha export) | Manufacturer marketing image — added 2026-06-13 (encoding laptop in loadout) |
+| sony-zv-e10-ii.jpg | Sony ZV-E10 II body (1280×881, white studio bg) | Wikimedia Commons — "Sony ZV-E10 Mark II" by PJ (TIFF, 1920px JPEG render) | CC BY 4.0 — credit "PJ (Wikimedia Commons)" if published. Added 2026-07-03 (camera upgrade picker) |
+| sony-zv-e1.jpg | Sony ZV-E1 + FE 28-60mm (1280×1280, re-cut) | Wikimedia Commons — "Sony ZV-E1 with Sony FE 28-60mm F4-5.6" by Henry Söderlund | CC BY 2.0 — credit "Henry Söderlund" if published. Original was black-on-black (contrast rule fail); rembg re-cut onto #eef1f5 2026-07-03, original in `_originals/`. Passes checker (ctr 195) |
 
 Licensing note: the two Commons files (Sony camera) are free-licensed (attribution required).
 The manufacturer/carrier shots are standard product marketing images — commonly used by
