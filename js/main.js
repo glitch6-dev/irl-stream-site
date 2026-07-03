@@ -124,7 +124,8 @@
         if (past && !wasVisible && !reduced && getComputedStyle(rail).display !== "none") {
           rail.querySelectorAll(".tier-rail-item").forEach(function (item, i) {
             var name = item.querySelector(".t-name");
-            var meta = item.querySelector(".t-meta");
+            // current item: decode only the VIEWING word so the ● dot stays intact
+            var meta = item.querySelector(".t-meta .t-blink") || item.querySelector(".t-meta");
             if (name) decode(name, 150 + i * 100);
             if (meta) decode(meta, 250 + i * 100);
           });
