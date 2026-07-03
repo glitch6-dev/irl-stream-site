@@ -86,7 +86,9 @@ main, header, footer { position: relative; z-index: 2; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .glitch, .scanline::after, .footer::before, .marquee-track { animation: none !important; }
+  .glitch, .scanline::after, .footer::before, .marquee-track,
+  .tier-rail.visible .rail-label, .tier-rail.visible .tier-rail-item,
+  .tier-rail-item.current .t-meta { animation: none !important; }
   * { transition-duration: .01ms !important; }
 }
 
@@ -274,14 +276,32 @@ a.tier-item:hover { border-color: var(--purple); transform: translateY(-2px); }
 .tier-item .name { font-family: var(--font-display); color: var(--text); font-size: 22px; }
 @media (max-width: 640px) { .tier-switch { grid-template-columns: 1fr; } }
 
-/* Tier rail — fixed edge switcher on wide desktop; the bottom compare block is the narrow-screen fallback */
+/* Tier rail — fixed edge switcher on wide desktop; the bottom compare block is the narrow-screen fallback.
+   Hidden until the hero is scrolled past, then slides in (.visible toggled in main.js). */
 .tier-rail {
-  position: fixed; right: 0; top: 50%; transform: translateY(-50%); z-index: 40;
+  position: fixed; right: 0; top: 50%; z-index: 40;
+  transform: translate(calc(100% + 20px), -50%); opacity: 0; pointer-events: none;
+  transition: transform .55s cubic-bezier(.22, 1, .36, 1), opacity .35s ease;
   display: none; flex-direction: column; gap: 8px;
   padding: 14px 10px;
   background: #07060cb8; backdrop-filter: blur(10px);
   border: 1px solid var(--line); border-right: 0; border-radius: 14px 0 0 14px;
   box-shadow: -8px 0 30px -16px #000;
+}
+.tier-rail.visible { transform: translate(0, -50%); opacity: 1; pointer-events: auto; }
+.tier-rail.visible .rail-label { animation: rail-glitch .5s steps(2) .35s backwards; }
+.tier-rail.visible .tier-rail-item { animation: rail-in .55s cubic-bezier(.22, 1, .36, 1) backwards; }
+.tier-rail.visible .tier-rail-item:nth-child(3) { animation-delay: .1s; }
+.tier-rail.visible .tier-rail-item:nth-child(4) { animation-delay: .2s; }
+@keyframes rail-in {
+  0% { opacity: 0; transform: translateX(28px) skewX(-8deg); }
+  60% { opacity: 1; transform: translateX(-4px) skewX(2deg); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes rail-glitch {
+  0% { text-shadow: -2px 0 var(--magenta), 2px 0 var(--cyan); transform: translateX(2px); }
+  50% { text-shadow: 2px 0 var(--magenta), -2px 0 var(--cyan); transform: translateX(-2px); }
+  100% { text-shadow: none; transform: none; }
 }
 .tier-rail .rail-label { align-self: center; font-size: 12px; letter-spacing: 3px; color: var(--muted); margin-bottom: 4px; }
 .tier-rail-item { display: flex; flex-direction: column; gap: 2px; padding: 9px 14px 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; text-decoration: none; transition: border-color .15s, transform .15s; }
@@ -290,7 +310,7 @@ a.tier-rail-item:hover { border-color: var(--tier-accent); transform: translateX
 .tier-rail-item .t-num { color: var(--tier-accent); font-size: 12px; letter-spacing: 1.5px; }
 .tier-rail-item .t-name { font-family: var(--font-display); color: var(--text); font-size: 17px; }
 .tier-rail-item .t-meta { color: var(--muted); font-size: 12px; }
-.tier-rail-item.current .t-meta { color: var(--tier-accent); }
+.tier-rail-item.current .t-meta { color: var(--tier-accent); animation: blink 2.4s steps(1) infinite; }
 @media (min-width: 1200px) {
   .tier-rail { display: flex; }
   .tier-switch-wrap { display: none; }

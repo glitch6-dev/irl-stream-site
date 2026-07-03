@@ -82,14 +82,54 @@
     counters.forEach(runCount);
   }
 
-  // Sticky product bar (product pages): show shortly after scrolling begins
+  // Terminal decode: scramble glyphs resolve left-to-right into the real text
+  var GLYPHS = "▓▒░<>/\\|=+*_01";
+  function decode(el, delay) {
+    var target = el.getAttribute("data-decode") || el.textContent;
+    el.setAttribute("data-decode", target);
+    if (el._decodeTimer) clearTimeout(el._decodeTimer);
+    if (el._decodeRaf) cancelAnimationFrame(el._decodeRaf);
+    el._decodeTimer = setTimeout(function () {
+      var t0 = null, dur = 520;
+      function tick(ts) {
+        if (!t0) t0 = ts;
+        var p = Math.min((ts - t0) / dur, 1);
+        var solved = Math.floor(target.length * p);
+        var out = target.slice(0, solved);
+        for (var i = solved; i < target.length; i++) {
+          out += GLYPHS[(Math.random() * GLYPHS.length) | 0];
+        }
+        el.textContent = out;
+        if (p < 1) el._decodeRaf = requestAnimationFrame(tick);
+        else el.textContent = target;
+      }
+      el._decodeRaf = requestAnimationFrame(tick);
+    }, delay);
+  }
+
+  // Sticky product bar + tier rail (product pages): show shortly after scrolling begins
   var bar = document.querySelector(".sticky-bar");
+  var rail = document.querySelector(".tier-rail");
   var hero = document.querySelector(".product-hero");
-  if (bar && hero) {
+  if ((bar || rail) && hero) {
     var updateBar = function () {
       // reveal once the hero is ~halfway scrolled past, not only when fully gone
       var trigger = Math.max(120, hero.offsetHeight * 0.45);
-      bar.classList.toggle("visible", window.scrollY > trigger);
+      var past = window.scrollY > trigger;
+      if (bar) bar.classList.toggle("visible", past);
+      if (rail) {
+        var wasVisible = rail.classList.contains("visible");
+        rail.classList.toggle("visible", past);
+        // decode the tier names/metas on each slide-in (desktop only; rail is display:none below 1200px)
+        if (past && !wasVisible && !reduced && getComputedStyle(rail).display !== "none") {
+          rail.querySelectorAll(".tier-rail-item").forEach(function (item, i) {
+            var name = item.querySelector(".t-name");
+            var meta = item.querySelector(".t-meta");
+            if (name) decode(name, 150 + i * 100);
+            if (meta) decode(meta, 250 + i * 100);
+          });
+        }
+      }
     };
     window.addEventListener("scroll", updateBar, { passive: true });
     window.addEventListener("resize", updateBar, { passive: true });
