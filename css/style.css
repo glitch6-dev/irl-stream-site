@@ -274,6 +274,29 @@ a.tier-item:hover { border-color: var(--purple); transform: translateY(-2px); }
 .tier-item .name { font-family: var(--font-display); color: var(--text); font-size: 22px; }
 @media (max-width: 640px) { .tier-switch { grid-template-columns: 1fr; } }
 
+/* Tier rail — fixed edge switcher on wide desktop; the bottom compare block is the narrow-screen fallback */
+.tier-rail {
+  position: fixed; right: 0; top: 50%; transform: translateY(-50%); z-index: 40;
+  display: none; flex-direction: column; gap: 8px;
+  padding: 14px 10px;
+  background: #07060cb8; backdrop-filter: blur(10px);
+  border: 1px solid var(--line); border-right: 0; border-radius: 14px 0 0 14px;
+  box-shadow: -8px 0 30px -16px #000;
+}
+.tier-rail .rail-label { align-self: center; font-size: 12px; letter-spacing: 3px; color: var(--muted); margin-bottom: 4px; }
+.tier-rail-item { display: flex; flex-direction: column; gap: 2px; padding: 9px 14px 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; text-decoration: none; transition: border-color .15s, transform .15s; }
+a.tier-rail-item:hover { border-color: var(--tier-accent); transform: translateX(-3px); }
+.tier-rail-item.current { border-color: var(--tier-accent); }
+.tier-rail-item .t-num { color: var(--tier-accent); font-size: 12px; letter-spacing: 1.5px; }
+.tier-rail-item .t-name { font-family: var(--font-display); color: var(--text); font-size: 17px; }
+.tier-rail-item .t-meta { color: var(--muted); font-size: 12px; }
+.tier-rail-item.current .t-meta { color: var(--tier-accent); }
+@media (min-width: 1200px) {
+  .tier-rail { display: flex; }
+  .tier-switch-wrap { display: none; }
+  .cta-row a[href="#tiers"] { display: none; }
+}
+
 /* Camera picker (optional upgrade — selection is visual only; the upgrade is added at Stripe checkout) */
 .camera-wrap { position: relative; z-index: 1; margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--line); }
 .camera-fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
