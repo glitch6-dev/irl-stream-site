@@ -319,3 +319,15 @@ details.qa summary::after { content: "+"; font-family: var(--font-mono); color: 
 details.qa[open] summary::after { content: "–"; }
 details.qa .qa-body { padding: 0 18px 16px; font-size: 14px; }
 details.qa .qa-body strong { color: var(--text); }
+
+/* === CONVERSION PASS 2026-07 === */
+.proof-line { margin-top: 18px; font-size: 13px; letter-spacing: 1px; color: var(--muted); }
+.proof-line a { color: var(--cyan); }
+.after-order-wrap { margin-top: 72px; }
+.after-order { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 18px; }
+.after-order li { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 18px; }
+.after-order .step-num { color: var(--cyan); font-size: 13px; letter-spacing: 2px; }
+.after-order .step-name { color: var(--text); font-weight: 700; margin: 8px 0 6px; }
+.after-order .step-role { font-size: 14px; line-height: 1.5; }
+@media (max-width: 900px) { .after-order { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .after-order { grid-template-columns: 1fr; } }
