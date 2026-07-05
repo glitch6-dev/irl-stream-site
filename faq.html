@@ -84,16 +84,16 @@
       <details class="qa">
         <summary>What are the three tiers?</summary>
         <div class="qa-body"><strong>Metro</strong> — T-Mobile Home Internet, built for city and suburban streamers with solid 5G coverage. The first unit we ship.<br><br>
-                <strong>Roamer</strong> — Peplink MAX Transit Duo with dual-SIM bonding (T-Mobile + Verizon). Built for areas where single-carrier coverage drops. Ships after Metro.<br><br>
-                <strong>Nomad</strong> — Starlink portable in roam mode. Designed for remote locations, international travel, and off-grid streaming. The most powerful tier.</div>
+                <strong>Roamer</strong> — Peplink MAX Transit Duo with dual-carrier bonding — it streams on T-Mobile and Verizon at the same time, so if one carrier drops the other keeps you live. Built for areas where a single carrier isn't reliable. Ships after Metro.<br><br>
+                <strong>Nomad</strong> — Starlink satellite internet — no cell towers needed. Designed for remote locations, international travel, and off-grid streaming. The most powerful tier.</div>
       </details>
       <details class="qa">
         <summary>What does "stream output" mean — 1080p 60fps but camera is 4K?</summary>
-        <div class="qa-body">The Sony ZV-1 II shoots 4K 30fps clean HDMI output into the Elgato Cam Link 4K. OBS on the laptop takes that 4K signal and does two things at once: streams 1080p 60fps to Twitch, YouTube, and Kick (the platform standard), and records the raw 4K 30fps locally to storage. You stream at broadcast quality and archive in full resolution.</div>
+        <div class="qa-body">The Sony ZV-1 II films in 4K 30fps and sends a clean HDMI feed — no menus or icons baked into your shot — through the Elgato Cam Link into OBS on the laptop. OBS then does two things at once: broadcasts your live stream to Twitch, YouTube, and Kick at 1080p 60fps (the standard those platforms use), and records the full 4K file locally so you keep a top-quality copy of every stream.</div>
       </details>
       <details class="qa">
         <summary>Which platforms does the backpack stream to?</summary>
-        <div class="qa-body">All three tiers support simultaneous multistream to Twitch, YouTube, and Kick out of the box. The signal routes through NGINX RTMP on the laptop with an FFmpeg bridge for RTMPS platforms. You go live once and hit all three.</div>
+        <div class="qa-body">All three tiers stream to Twitch, YouTube, and Kick at the same time, out of the box. OBS and a relay server on the laptop handle the routing — you hit go-live once and you're on all three platforms.</div>
       </details>
       <p class="qa-group">Orders &amp; Shipping</p>
       <details class="qa">
@@ -119,7 +119,7 @@
       </details>
       <details class="qa">
         <summary>Is the gear under warranty?</summary>
-        <div class="qa-body">Yes. TG6 warrants its own work — physical assembly and the in-house shoulder mount for 90 days from delivery, plus <strong>lifetime config care</strong> on the encoding and streaming software (OBS, NGINX, FFmpeg, and your uplink profile), restored remotely where possible if it ever breaks. Every brand-name component — Sony, Dell, Elgato, DJI, Peplink, Starlink — carries its own manufacturer's warranty, and TG6 handles those claims for you using the Build Sheet &amp; Warranty Card that ships with your unit. Backpack owners also get access to a <strong>private owners-only Discord channel</strong> for config care and 24/7 AI-assisted support, opening with first deliveries. Full details in the <a href="terms.html#warranty">Terms</a>.</div>
+        <div class="qa-body">Yes. TG6 warrants its own work — physical assembly and the in-house shoulder mount for 90 days from delivery, plus <strong>lifetime config care</strong> on the streaming software TG6 sets up for you (OBS, the multistream relay, and your connection profile), restored remotely where possible if it ever breaks. Every brand-name component — Sony, Dell, Elgato, DJI, Peplink, Starlink — carries its own manufacturer's warranty, and TG6 handles those claims for you using the Build Sheet &amp; Warranty Card that ships with your unit. Backpack owners also get access to a <strong>private owners-only Discord channel</strong> for config care and 24/7 AI-assisted support, opening with first deliveries. Full details in the <a href="terms.html#warranty">Terms</a>.</div>
       </details>
       <details class="qa">
         <summary>I have a question not answered here.</summary>
