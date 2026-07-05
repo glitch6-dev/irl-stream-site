@@ -8,7 +8,7 @@ misconfigured — contact returns **403 Access Denied**, subscribe is opaque `no
 ## Decisions (locked with user)
 
 - **Storage:** one spreadsheet **"TG6 Forms"** with two tabs (`Subscribers`, `Contact`).
-- **Contact alerts:** on a contact submission, also **email** `dvelupr@proton.me`.
+- **Contact alerts:** on a contact submission, also **email** `support@tg6-dev.com`.
 - **Deploy model:** I provide `Code.gs` + a deploy guide; **user deploys** the Apps Script
   Web App (it must live in their Google account) and pastes back the `/exec` URL.
 
@@ -86,7 +86,7 @@ Debugging the two old endpoints, CAPTCHA, double-opt-in, admin dashboard, server
 - **Verified 2026-06-08** via curl + Drive read:
   - GET → `{"ok":true,"service":"TG6 - IRL Leads"}` (Anyone-access; 403 fixed).
   - POST subscribe ×2 → rows in Subscribers tab.
-  - POST contact → row in Contact tab (+ email to dvelupr@proton.me via MailApp).
+  - POST contact → row in Contact tab (+ email to support@tg6-dev.com via MailApp).
   - POST honeypot (`company` filled) → dropped, no row.
   - Note: curl shows "Page Not Found" on the followed redirect, but `/exec` returns 302→/echo
     and side effects run — confirmed by reading the sheet.

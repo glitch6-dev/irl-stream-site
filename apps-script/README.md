@@ -15,7 +15,7 @@ forms; the front end posts to the deployed `/exec` URL.
    - In that sheet: **Extensions ▸ Apps Script**.
    - Delete the default `function myFunction(){}`.
    - Paste the entire contents of [`Code.gs`](./Code.gs).
-   - Confirm the `NOTIFY_EMAIL` value near the top (default `dvelupr@proton.me`). Save (Ctrl+S).
+   - Confirm the `NOTIFY_EMAIL` value near the top (default `support@tg6-dev.com`). Save (Ctrl+S).
 
 3. **Deploy as a Web App**
    - **Deploy ▸ New deployment**.

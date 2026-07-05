@@ -14,7 +14,7 @@
  */
 
 // Where contact-form notifications are sent.
-var NOTIFY_EMAIL = 'dvelupr@proton.me';
+var NOTIFY_EMAIL = 'support@tg6-dev.com';
 
 var SUBSCRIBERS_TAB = 'Subscribers';
 var CONTACT_TAB = 'Contact';
